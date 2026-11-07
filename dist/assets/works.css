@@ -16,3 +16,7 @@ dialog{border:0;padding:0;overscroll-behavior:contain;}dialog::backdrop{backgrou
 /* Portrait artwork frames for poster and e-commerce projects, in every filter. */
 .project-card[data-category="poster"] .project-card__media,
 .project-card[data-category="commerce"] .project-card__media { aspect-ratio: 3 / 4; }
+
+/* Keep poster and e-commerce frames portrait regardless of the source image's dimensions. */
+.project-card__media--portrait { aspect-ratio: 3 / 4; }
+.project-card__media--portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }

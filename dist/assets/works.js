@@ -38,7 +38,12 @@
       button.setAttribute('aria-label','查看'+p.title+'，展示示意');
       // All strings below come from the local authored project catalogue.
       const media = document.createElement('div');media.className='project-card__media';
+      if (p.category === 'poster' || p.category === 'commerce') {
+        media.classList.add('project-card__media--portrait');
+        media.style.aspectRatio = '3 / 4';
+      }
       const image = document.createElement('img');image.src=p.image;image.alt=p.title+'，模板示意图片，非个人作品';image.loading=index<2?'eager':'lazy';image.width=1200;image.height=900;
+      if (p.category === 'poster' || p.category === 'commerce') { image.width = 900; image.height = 1200; }
       const tag=document.createElement('span');tag.className='project-card__tag';tag.textContent=categories[p.category];
       const arrow=document.createElement('span');arrow.className='project-card__arrow';arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');
       media.append(image,tag,arrow);
