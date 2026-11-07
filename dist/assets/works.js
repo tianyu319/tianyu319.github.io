@@ -33,6 +33,7 @@
     const fragment = document.createDocumentFragment();
     visibleProjects().forEach((p,index) => {
       const card = document.createElement('article');card.className = 'project-card reveal';
+      card.dataset.category = p.category;
       const button = document.createElement('button');button.type='button';button.className='project-card__button';button.dataset.project=p.id;
       button.setAttribute('aria-label','查看'+p.title+'，展示示意');
       // All strings below come from the local authored project catalogue.
