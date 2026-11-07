@@ -726,6 +726,28 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
   #hero .hero__period { position: relative; display: block; grid-row: 1; width: var(--ap); height: var(--ap); margin: 12px auto 0; background: transparent; }
   #hero .hero__stage { left: 0; top: 0; bottom: auto; }
   #hero .hero__word { grid-row: 2; justify-self: center; white-space: nowrap; }
+  [data-8b-live] #hero .hero__aperture {
+    animation-name: mobile-portrait-move, mobile-portrait-shrink;
+    animation-timing-function: linear, linear;
+  }
+  [data-8b-live] #hero .hero__tint {
+    animation-name: mobile-portrait-tint;
+    animation-timing-function: linear;
+    animation-range: cover calc(100% - 100vh) cover calc(100% - 30vh);
+  }
+  @keyframes mobile-portrait-move {
+    0%, 45% { translate: 0px 0px; }
+    100% { translate: var(--hero-dx, 0px) var(--hero-dy, 0px); }
+  }
+  @keyframes mobile-portrait-shrink {
+    0% { scale: 1; }
+    35%, 100% { scale: var(--hero-s, 0.08); }
+  }
+  @keyframes mobile-portrait-tint {
+    0% { opacity: 0; }
+    35%, 100% { opacity: 1; }
+  }
+
 }
 </style>
 </head>
