@@ -232,7 +232,7 @@ textarea.m-field { min-height: 112px; resize: vertical; }
   #hero { --ap: min(36vw, 60svh); }
   #hero .hero__title { font-size: min(26.5vw, 43svh); }
   #hero .hero__period { position: relative; background: transparent; }
-  #hero .hero__stage { left: 0; top: auto; bottom: 0; }
+  #hero .hero__stage { left: clamp(18px, 2.5vw, 48px); top: auto; bottom: 0; }
 }
 @media (prefers-reduced-motion: no-preference) {
   #hero .hero__mask { animation: hero-mask .95s linear backwards; }
