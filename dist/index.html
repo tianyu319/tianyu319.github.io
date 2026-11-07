@@ -718,7 +718,19 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 #capabilities .service__entry:focus-visible {outline:4px solid var(--color-3);outline-offset:-5px;}
 @media(max-width:899px){#capabilities .service__entry>span {bottom:30px;right:30px;font-size:15px;padding:12px 18px;}}
 @media(prefers-reduced-motion:reduce){#capabilities .service__entry>span{transition:none;}}
-</style></head>
+</style><style data-8b-part="mobile-hero-spacing">
+/* Reserve separate rows for the mobile portrait and greeting. */
+@media (max-width: 899px), (orientation: portrait) {
+  #hero { --ap: min(56vw, 260px); grid-template-rows: auto auto; gap: 28px; min-height: 100svh; }
+  #hero .hero__title { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(30px, 7vw, 46px); padding-top: 8px; padding-bottom: 32px; white-space: normal; }
+  #hero .hero__period { position: relative; display: block; grid-row: 1; width: var(--ap); height: var(--ap); margin: 12px auto 0; background: transparent; }
+  #hero .hero__stage { left: 0; top: 0; bottom: auto; }
+  #hero .hero__word { grid-row: 2; justify-self: center; white-space: nowrap; }
+  [data-8b-live] #hero .hero__aperture { animation: none; translate: none; scale: 1; }
+  [data-8b-live] #hero .hero__tint { animation: none; opacity: 0; }
+}
+</style>
+</head>
 <body class="m-text">
 <a class="skip" href="#main">跳到正文</a>
 <!-- navigation: fixed top bar: wordmark, section links, Start a project button; phone menu overlay -->
@@ -755,7 +767,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 hero__lead">我是张天宇，一名视觉设计师。专注商业平面设计和线上内容设计，让品牌信息更清晰、更有吸引力。</p>
 <a class="m-link hero__link" href="#work"><span class="m-link__label">查看设计分类</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a>
 </div>
-<h1 class="m-text-2 hero__title" id="hero-title" style="--len:5"><span class="hero__word"><span class="hero__mask"><span class="hero__glyphs">Hello</span></span></span><span aria-hidden="true" class="hero__period"><span class="hero__stage"><span class="hero__orbit"><span class="hero__moon"></span></span><span class="hero__aperture"><img alt="张天宇的个人照片" class="hero__img" fetchpriority="high" height="1164" src="assets/zhang-tianyu.png" width="990"/><span class="hero__tint"></span></span></span></span></h1>
+<h1 class="m-text-2 hero__title" id="hero-title" style="--len:5"><span class="hero__word"><span class="hero__mask"><span class="hero__glyphs">Hello</span></span></span><span aria-hidden="true" class="hero__period"><span class="hero__stage"><span class="hero__orbit"><span class="hero__moon"></span></span><span class="hero__aperture"><img alt="张天宇的个人照片" class="hero__img" fetchpriority="high" height="1164" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="990"/><span class="hero__tint"></span></span></span></span></h1>
 </section>
 <!-- statement: two-line statement of what the studio does, a lead paragraph and an index of links into the page (animation: scene:statement) -->
 <section aria-labelledby="statement-title" data-8b-section="statement" id="statement">
@@ -935,7 +947,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 </div>
 <div class="studio__collage">
 <figure class="shot shot--wide"><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-00.jpg" width="1400"/></figure>
-<figure class="shot shot--tall"><img alt="张天宇的个人照片" height="1200" loading="lazy" src="assets/zhang-tianyu.png" width="900"/></figure>
+<figure class="shot shot--tall"><img alt="张天宇的个人照片" height="1200" loading="lazy" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="900"/></figure>
 <figure class="shot shot--tall"><img alt="模板氛围示意图片，非个人作品" height="1200" loading="lazy" src="assets/studio-02.jpg" width="900"/></figure>
 <figure class="shot shot--wide"><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-03.jpg" width="1400"/></figure>
 <figure class="shot shot--wide"><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-04.jpg" width="1400"/></figure>
@@ -996,7 +1008,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 </main>
 <!-- footer: closing greeting "Bye" with the round photo full stop, link columns, newsletter, copyright and the Design: 8B credit (animation: scene:footer) -->
 <footer data-8b-section="footer" id="footer">
-<p class="m-text-2 footer__bye" style="--len:2"><span class="footer__word">再见</span><span aria-hidden="true" class="footer__period"><span class="footer__aperture"><img alt="张天宇的个人照片" class="footer__img" height="1164" src="assets/zhang-tianyu.png" width="990"/><span class="footer__tint"></span></span></span></p>
+<p class="m-text-2 footer__bye" style="--len:2"><span class="footer__word">再见</span><span aria-hidden="true" class="footer__period"><span class="footer__aperture"><img alt="张天宇的个人照片" class="footer__img" height="1164" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="990"/><span class="footer__tint"></span></span></span></p>
 <div class="footer__grid">
 <nav aria-label="Footer" class="footer__col">
 <p class="m-text-6 footer__label">浏览</p>
