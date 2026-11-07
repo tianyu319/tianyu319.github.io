@@ -19,11 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - name: Prepare Tianyu site path
+      - name: Prepare shorter site path
         run: |
           mkdir -p _site/tianyu
+          cp -R dist/. _site/
           cp -R dist/. _site/tianyu/
-          cp pages-index.html _site/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
