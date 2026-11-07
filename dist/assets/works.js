@@ -1,5 +1,5 @@
 (() => {
-  const categories = {poster:'商业海报',commerce:'电商视觉',brand:'品牌视觉',social:'效果图'};
+  const categories = {poster:'商业海报',commerce:'电商视觉',brand:'品牌视觉',local:'本地生活',social:'效果图'};
   const grid = document.getElementById('project-grid');
   const count = document.getElementById('result-count');
   const filters = [...document.querySelectorAll('[data-filter]')];
@@ -47,6 +47,14 @@
       const caption=document.createElement('p');caption.className='project-card__caption';caption.textContent=p.focus;
       button.append(media,meta,caption);button.addEventListener('click',()=>{trigger=button;openProject(p.id);});card.append(button);fragment.append(card);
     });
+    if (!visibleProjects().length) {
+      const empty = document.createElement('p');
+      empty.className = 'portfolio-note';
+      empty.style.gridColumn = '1 / -1';
+      empty.style.padding = '36px 0';
+      empty.textContent = '该分类暂无案例。';
+      fragment.append(empty);
+    }
     grid.replaceChildren(fragment);
     if(observer)grid.querySelectorAll('.reveal').forEach(n=>observer.observe(n));
     count.textContent=visibleProjects().length+' 个展示示意';
