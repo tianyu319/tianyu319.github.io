@@ -723,9 +723,9 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 @media (max-width: 899px), (orientation: portrait) {
   #hero { --ap: min(56vw, 260px); grid-template-rows: auto auto; gap: 28px; min-height: 100svh; }
   #hero .hero__title { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(30px, 7vw, 46px); padding-top: 8px; padding-bottom: 32px; white-space: normal; }
-  #hero .hero__period { position: relative; display: block; grid-row: 1; width: var(--ap); height: var(--ap); margin: 12px auto 0; background: transparent; }
+  #hero .hero__period { position: relative; display: block; grid-row: 2; width: var(--ap); height: var(--ap); margin: 12px auto 0; background: transparent; }
   #hero .hero__stage { left: 0; top: 0; bottom: auto; }
-  #hero .hero__word { grid-row: 2; justify-self: center; white-space: nowrap; }
+  #hero .hero__word { grid-row: 1; justify-self: center; white-space: nowrap; }
   [data-8b-live] #hero .hero__aperture {
     animation-name: mobile-portrait-move, mobile-portrait-shrink;
     animation-timing-function: linear, linear;
@@ -1413,14 +1413,14 @@ motionKit.scene('footer', () => {
     // Keep the entire first screen photo untouched until the user scrolls.
     const start = hero.getBoundingClientRect().top + scrollY + 48;
     const p = clamp((scrollY - start) / Math.max(420, innerHeight * 0.75));
-    const shrink = ease(p / 0.4);
-    const travel = ease((p - 0.5) / 0.5);
+    const shrink = ease(p);
+    const travel = ease(p);
     const endScale = Math.max(6, dot.offsetWidth) / Math.max(1, box.width);
     set('photo-scale', 1 + (endScale - 1) * shrink);
-    set('photo-tint', ease((p - 0.31) / 0.09));
+    set('photo-tint', ease(p));
     set('photo-x', (target.x + target.width / 2 - box.x - box.width / 2) * travel + 'px');
     set('photo-y', (target.y + target.height / 2 - box.y - box.height / 2) * travel + 'px');
-    set('orbit-opacity', 1 - ease(p / 0.3));
+    set('orbit-opacity', 1 - ease(p / 0.65));
     set('photo-opacity', p >= 1 ? 0 : 1);
   };
   const schedule = () => { if (!scheduled) { scheduled = true; requestAnimationFrame(update); } };
