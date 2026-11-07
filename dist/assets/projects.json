@@ -1,0 +1,66 @@
+[
+  {
+    "id": "brand-packaging",
+    "category": "brand",
+    "title": "品牌包装视觉",
+    "image": "assets/studio-11.jpg",
+    "focus": "色彩搭配、图形语言与包装版式",
+    "description": "此示意展示包装视觉的排版与色彩呈现。真实案例可在这里补充项目背景、设计思路、本人负责的内容以及完整作品图。"
+  },
+  {
+    "id": "poster-layout",
+    "category": "poster",
+    "title": "商业海报排版",
+    "image": "assets/studio-02.jpg",
+    "focus": "信息层级、主视觉与文字编排",
+    "description": "此示意展示海报类案例的阅读布局。真实项目可展示主视觉、局部细节及不同尺寸的应用效果。"
+  },
+  {
+    "id": "commerce-presentation",
+    "category": "commerce",
+    "title": "商品展示视觉",
+    "image": "assets/studio-12.jpg",
+    "focus": "商品卖点、画面节奏与购买引导",
+    "description": "此示意展示电商类案例的浏览形式。真实项目可补充商品主图、详情页、活动页面与设计说明。"
+  },
+  {
+    "id": "social-campaign",
+    "category": "social",
+    "title": "效果图展示",
+    "image": "assets/studio-13.jpg",
+    "focus": "传播主题、内容节奏与平台适配",
+    "description": "此示意展示效果图内容的呈现形式。真实项目可补充系列宣传图、不同平台版本与排版细节。"
+  },
+  {
+    "id": "brand-system",
+    "category": "brand",
+    "title": "品牌风格延展",
+    "image": "assets/studio-00.jpg",
+    "focus": "风格统一、视觉识别与场景应用",
+    "description": "此示意展示品牌视觉的应用场景。真实项目可展示标志、色彩、字体规范与系列物料。"
+  },
+  {
+    "id": "poster-campaign",
+    "category": "poster",
+    "title": "活动宣传视觉",
+    "image": "assets/studio-03.jpg",
+    "focus": "主题表达、文字层级与视觉引导",
+    "description": "此示意展示活动类宣传的案例布局。真实项目可结合主海报、延展版本和设计过程进行说明。"
+  },
+  {
+    "id": "commerce-series",
+    "category": "commerce",
+    "title": "电商系列物料",
+    "image": "assets/studio-01.jpg",
+    "focus": "系列版式、商品呈现与风格统一",
+    "description": "此示意展示系列商品视觉的浏览形式。真实项目可补充不同商品、活动阶段与尺寸版本。"
+  },
+  {
+    "id": "social-series",
+    "category": "social",
+    "title": "线上内容系列",
+    "image": "assets/studio-04.jpg",
+    "focus": "系列设计、内容表达与版式变化",
+    "description": "此示意展示线上系列内容的案例布局。真实项目可补充宣传图合集、设计规范与应用示例。"
+  }
+]
