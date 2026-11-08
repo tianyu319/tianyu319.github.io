@@ -19,6 +19,6 @@
 
 ## 免费 GitHub Pages 托管
 
-仓库为 ztyu3191-ux/tianyu，使用 GitHub Actions 部署 GitHub Pages。推送 main 分支后自动发布 dist/，同时保留根路径与 /tianyu/ 路径。网站地址：https://ztyu3191-ux.github.io/tianyu/。
+仓库为 tianyu319/tianyu319.github.io，使用 GitHub Actions 部署 GitHub Pages。推送 main 分支后自动发布 dist/，同时保留根路径与 /tianyu/ 路径。网站地址：https://tianyu319.github.io/。
 
 该版本已将字体改为本地资源。不包含 Sites 内部项目配置、Git 历史、凭据或令牌。GitHub Pages 的大陆访问质量需上线后实测，不能保证所有运营商均稳定访问。

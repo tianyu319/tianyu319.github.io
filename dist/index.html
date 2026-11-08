@@ -788,6 +788,27 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 }
 </style>
 <style data-8b-part="education-visibility">[data-education-hidden="true"] { display: none !important; }</style>
+
+<style data-8b-part="category-preview-layout">
+#work .work__head { display: grid; grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr); align-items: start; gap: clamp(28px, 4vw, 72px); }
+#work .work__lead { width: 100%; max-width: none; font-size: clamp(18px, 1.65vw, 28px); line-height: 1.65; }
+#work .category-preview { display: grid; place-items: center; background: #20252b; }
+#work .category-preview > img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; }
+#work .category-preview--series { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5%; padding: 12% 9% 23%; align-items: center; }
+#work .category-preview--series > img { height: auto; max-height: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 18px 36px #0005; }
+#work .category-preview--series > img:first-child { transform: rotate(-7deg) translateY(7%); }
+#work .category-preview--series > img:last-child { transform: rotate(7deg) translateY(7%); }
+#work .category-preview--poster { background: radial-gradient(ellipse at 50% 35%, #425669, #1b2733); }
+#work .category-preview--commerce { background: radial-gradient(ellipse at 50% 35%, #5f748c, #1b2b3e); }
+#work .category-preview--packaging { background: radial-gradient(ellipse at 50% 35%, #b6aa9b, #5d665c); }
+#work .category-preview--brand > img { object-position: 50% 36%; }
+#work .category-preview--local > img { object-position: 50% 45%; }
+#work .category-preview--render > img { object-position: 50% 40%; }
+@media (max-width: 899px) {
+  #work .work__head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  #work .work__lead { font-size: 16px; line-height: 1.6; }
+}
+</style>
 </head>
 <body class="m-text">
 <a class="skip" href="#main">跳到正文</a>
@@ -850,38 +871,38 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <div class="work__stage">
 <div class="work__head">
 <h2 class="m-text-3" id="work-title">设计分类<span aria-hidden="true" class="m-dot"></span></h2>
-<p class="m-text-5 work__lead">设计方向涵盖商业海报、电商视觉、品牌视觉、本地生活、包装设计与效果图。以下图片仅作展示示意，并非个人作品。</p>
+<p class="m-text-5 work__lead">从商业海报、电商视觉、品牌形象到本地生活、包装设计、文创插画与空间效果图，我以清晰的信息层级和统一的视觉语言，让创意贴合真实的传播场景。结合品牌定位、产品特点与使用需求，完成从主视觉构思、版式设计到应用展示的完整表达，让设计更有辨识度，也更易被理解。</p>
 </div>
 <div class="work__window">
 <ul class="work__track" data-8b-fixed="6" data-8b-items=":scope &gt; .case">
 <li class="case">
-<div class="case__media"><img alt="商业海报示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-00.jpg" width="1600"/></div>
-<span class="m-badge case__tag">商业海报 · 示意</span>
+<div class="case__media"><div class="case__img category-preview category-preview--poster category-preview--series"><img src="assets/cases/poster-work-04.webp" alt="节约用水公益海报" width="600" height="848" loading="lazy" decoding="async"/><img src="assets/cases/poster-work-03.webp" alt="MIX网球 中秋活动" width="600" height="1200" loading="lazy" decoding="async"/><img src="assets/cases/poster-work-05.webp" alt="跨境电商海报" width="600" height="789" loading="lazy" decoding="async"/></div></div>
+<span class="m-badge case__tag">商业海报</span>
 <div class="case__text"><h3 class="m-text-4 case__name">商业海报</h3><p class="m-text-5 case__line">通过清晰的排版与主视觉，突出宣传主题和信息重点。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="电商视觉示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-01.jpg" width="1600"/></div>
-<span class="m-badge case__tag">电商视觉 · 示意</span>
+<div class="case__media"><div class="case__img category-preview category-preview--commerce category-preview--series"><img src="assets/cases/commerce-work-01.webp" alt="TORRAS 充电宝" width="887" height="1774" loading="lazy" decoding="async"/><img src="assets/cases/commerce-work-02.webp" alt="ALOBON 口红" width="887" height="1774" loading="lazy" decoding="async"/><img src="assets/cases/commerce-work-04.webp" alt="钢化膜" width="793" height="1983" loading="lazy" decoding="async"/></div></div>
+<span class="m-badge case__tag">电商视觉</span>
 <div class="case__text"><h3 class="m-text-4 case__name">电商视觉</h3><p class="m-text-5 case__line">突出商品特点与核心卖点，让用户快速获取关键信息。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="品牌视觉示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-02.jpg" width="1600"/></div>
-<span class="m-badge case__tag">品牌视觉 · 示意</span>
+<div class="case__media"><div class="case__img category-preview category-preview--brand"><img src="assets/cases/brand-work-02.webp" alt="无锡春潮幼儿园 画册" width="800" height="600" loading="lazy" decoding="async"/></div></div>
+<span class="m-badge case__tag">品牌视觉</span>
 <div class="case__text"><h3 class="m-text-4 case__name">品牌视觉</h3><p class="m-text-5 case__line">统一色彩、字体与图形语言，建立清晰一致的品牌风格。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="本地生活示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-03.jpg" width="1600"/></div>
-<span class="m-badge case__tag">本地生活 · 示意</span>
+<div class="case__media"><div class="case__img category-preview category-preview--local"><img src="assets/cases/local-work-02.webp" alt="老码头火锅 美团头图" width="800" height="400" loading="lazy" decoding="async"/></div></div>
+<span class="m-badge case__tag">本地生活</span>
 <div class="case__text"><h3 class="m-text-4 case__name">本地生活</h3><p class="m-text-5 case__line">围绕门店、服务与活动，呈现清晰的本地生活宣传内容。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="包装设计示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-11.jpg" width="1600"/></div>
-<span class="m-badge case__tag">包装设计 · 示意</span>
+<div class="case__media"><div class="case__img category-preview category-preview--packaging category-preview--series"><img src="assets/cases/packaging-work-01.webp" alt="茶叶手提袋" width="600" height="800" loading="lazy" decoding="async"/><img src="assets/cases/packaging-work-02.webp" alt="柠檬叶精油" width="600" height="800" loading="lazy" decoding="async"/><img src="assets/cases/packaging-work-06.webp" alt="百梦唐枕头盒" width="600" height="800" loading="lazy" decoding="async"/></div></div>
+<span class="m-badge case__tag">包装设计</span>
 <div class="case__text"><h3 class="m-text-4 case__name">包装设计</h3><p class="m-text-5 case__line">结合品牌风格与产品特点，呈现包装结构、版式与应用效果。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="效果图示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-15.jpg" width="1600"/></div>
-<span class="m-badge case__tag">效果图 · 示意</span>
+<div class="case__media"><div class="case__img category-preview category-preview--render"><img src="assets/cases/render-18.webp" alt="氢能源补能站" width="1614" height="974" loading="lazy" decoding="async"/></div></div>
+<span class="m-badge case__tag">效果图</span>
 <div class="case__text"><h3 class="m-text-4 case__name">效果图</h3><p class="m-text-5 case__line">通过场景、材质与光影，直观展示设计方案的视觉效果。</p></div>
 </li></ul>
 </div>
