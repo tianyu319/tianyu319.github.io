@@ -229,10 +229,12 @@ textarea.m-field { min-height: 112px; resize: vertical; }
 #hero .hero__orbit { position: absolute; inset: -9%; display: block; border-radius: var(--radius-2); border: 1px solid color-mix(in srgb, var(--color-2) 16%, transparent); }
 #hero .hero__moon { position: absolute; left: 50%; top: 0; width: 9%; height: 9%; margin: -4.5% 0 0 -4.5%; border-radius: var(--radius-2); background: var(--color-3); }
 @media (min-width: 900px) and (orientation: landscape) {
-  #hero { --ap: min(36vw, 60svh); }
+  #hero { --ap: min(31vw, 60svh); }
   #hero .hero__title { font-size: min(26.5vw, 43svh); }
-  #hero .hero__period { position: relative; background: transparent; }
-  #hero .hero__stage { left: clamp(18px, 2.5vw, 48px); top: auto; bottom: 0; }
+  #hero .hero__intro { padding-top: calc(clamp(92px, 14svh, 150px) + clamp(20px, 3svh, 36px)); margin-left: calc(min(1.36vw, 2.21svh) - 1px); }
+  #hero .hero__word { position: relative; top: calc(-1 * clamp(32px, 6svh, 72px)); }
+  #hero .hero__period { position: static; background: transparent; }
+  #hero .hero__stage { left: auto; right: calc(clamp(40px, 9vw, 180px) + var(--ap) * 0.09); top: auto; bottom: calc(clamp(40px, 6svh, 80px) + var(--ap) * 0.09); }
 }
 @media (prefers-reduced-motion: no-preference) {
   #hero .hero__mask { animation: hero-mask .95s linear backwards; }
@@ -363,7 +365,7 @@ textarea.m-field { min-height: 112px; resize: vertical; }
 #studio .studio__roles { grid-column: span 2; display: grid; align-content: start; gap: 18px; padding-top: 24px; }
 #studio .studio__roles ul { display: grid; }
 #studio .role { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--color-1) 16%, transparent); }
-#studio .role__place { color: var(--color-6); }
+#studio .role__place { color: var(--color-3); font-size: 15px; line-height: 1.5; }
 @media (min-width: 900px) {
   #studio .studio__head { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); align-items: end; column-gap: 6vw; }
   #studio .studio__collage { display: block; aspect-ratio: 1.85; }
@@ -457,7 +459,7 @@ textarea.m-field { min-height: 112px; resize: vertical; }
 #footer .footer__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 56px; color: var(--color-5); }
 @media (min-width: 900px) {
   #footer .footer__bye { font-size: min(24vw, 40svh); }
-  #footer .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 2fr); }
+  #footer .footer__grid { grid-template-columns: repeat(4, max-content); justify-content: space-between; }
   #footer .footer__news { grid-column: auto; }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -687,7 +689,7 @@ textarea.m-field { min-height: 112px; resize: vertical; }
 [data-8b-live] #footer .footer__word { animation-name: footer-word-rise; animation-timeline: --footer-t1; animation-range: cover calc(100% - 100vh) cover calc(100% - 64vh); animation-timing-function: cubic-bezier(0.3333, 1, 0.6667, 1); animation-fill-mode: both; transform: none; }
 [data-8b-live] #footer .footer__tint { animation-name: footer-tint-clear; animation-timeline: --footer-t1; animation-range: cover calc(100% - 79.75vh) cover calc(100% - 57.25vh); animation-timing-function: linear; animation-fill-mode: both; }
 @keyframes footer-aperture-swell { 0% { scale: var(--footer-dot, 1); } 100% { scale: 1; } }
-@keyframes footer-word-rise { 0% { translate: 0px 30%; } 100% { translate: 0px 0px; } }
+@keyframes footer-word-rise { 0% { translate: 0px 12%; } 100% { translate: 0px 0px; } }
 @keyframes footer-tint-clear { 0% { opacity: 1; } 100% { opacity: 0; } }
 }
 </style>
@@ -767,6 +769,25 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
   }
 }
 </style>
+
+<style data-8b-part="footer-signature-layout">
+#footer { padding-top: clamp(64px, 10svh, 104px); padding-bottom: clamp(48px, 7svh, 88px); }
+#footer .footer__bye { display: flex; align-items: center; gap: clamp(12px, 2.5vw, 48px); padding-top: 0; font-size: clamp(44px, 15vw, 330px); line-height: 1; }
+#footer .footer__period { flex: none; display: block; width: var(--ap); height: var(--ap); margin-left: 0; }
+#footer .footer__aperture { inset: 0; transform-origin: center; }
+#footer .footer__brand { display: grid; place-items: center; width: 100%; height: 100%; background: var(--color-3); }
+#footer .footer__signature { display: block; width: 76%; height: auto; object-fit: contain; filter: brightness(0); }
+#footer .footer__tint { display: none; }
+#footer .footer__grid { margin-top: clamp(64px, 9svh, 104px); }
+@media (max-width: 599px) {
+  #footer .footer__grid { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #footer .footer__brand { animation: footer-turn 46s linear infinite; }
+  #footer.is-offscreen .footer__brand { animation-play-state: paused; }
+}
+</style>
+<style data-8b-part="education-visibility">[data-education-hidden="true"] { display: none !important; }</style>
 </head>
 <body class="m-text">
 <a class="skip" href="#main">跳到正文</a>
@@ -779,7 +800,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <li><a class="m-link-2" href="#capabilities">专业技能</a></li>
 <li><a class="m-link-2" href="#method">工作经历</a></li><li><a class="m-link-2" href="works.html">作品案例</a></li>
 <li><a class="m-link-2" href="#studio">关于我</a></li>
-<li><a class="m-link-2" href="#journal">教育与兴趣</a></li>
+<li hidden data-education-hidden="true"><a class="m-link-2" href="#journal" hidden data-education-hidden="true">教育与兴趣</a></li>
 </ul>
 </nav>
 <a class="m-btn nav__cta" href="#contact"><span class="m-btn__label">联系我</span></a>
@@ -791,7 +812,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <li><a href="#capabilities">专业技能<span aria-hidden="true" class="m-dot"></span></a></li>
 <li><a href="#method">工作经历<span aria-hidden="true" class="m-dot"></span></a></li><li><a href="works.html">作品案例<span aria-hidden="true" class="m-dot"></span></a></li>
 <li><a href="#studio">关于我<span aria-hidden="true" class="m-dot"></span></a></li>
-<li><a href="#journal">教育与兴趣<span aria-hidden="true" class="m-dot"></span></a></li>
+<li hidden data-education-hidden="true"><a href="#journal" hidden data-education-hidden="true">教育与兴趣<span aria-hidden="true" class="m-dot"></span></a></li>
 <li><a href="#contact">联系我<span aria-hidden="true" class="m-dot"></span></a></li>
 </ul>
 <p class="m-text menu__foot">张天宇 · cheonu319@qq.com</p>
@@ -801,7 +822,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <!-- hero: first screen: a one-word greeting whose full stop is a giant round photo (demo: "Hello") (animation: scene:hero) -->
 <section aria-labelledby="hero-title" data-8b-section="hero" id="hero">
 <div class="hero__intro">
-<p class="m-text-5 hero__lead">我是张天宇，一名视觉设计师。专注商业平面设计和线上内容设计，让品牌信息更清晰、更有吸引力。</p>
+<p class="m-text-5 hero__lead">我是<span style="color: var(--color-3)">张天宇</span>，一名<span style="color: var(--color-3)">视觉设计师</span>。专注商业平面设计和线上内容设计，让品牌信息更清晰、更有吸引力。</p>
 <a class="m-link hero__link" href="#work"><span class="m-link__label">查看设计分类</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a>
 </div>
 <h1 class="m-text-2 hero__title" id="hero-title" style="--len:5"><span class="hero__word"><span class="hero__mask"><span class="hero__glyphs">Hello</span></span></span><span aria-hidden="true" class="hero__period"><span class="hero__stage"><span class="hero__orbit"><span class="hero__moon"></span></span><span class="hero__aperture"><img alt="张天宇的个人照片" class="hero__img" fetchpriority="high" height="1164" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="990"/><span class="hero__tint"></span></span></span></span></h1>
@@ -817,48 +838,52 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <li><a class="m-link" href="#capabilities"><span class="m-link__label">查看专业技能</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a></li>
 <li><a class="m-link" href="#method"><span class="m-link__label">查看工作经历</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a></li>
 <li><a class="m-link" href="#studio"><span class="m-link__label">个人简介</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a></li>
-<li><a class="m-link" href="#journal"><span class="m-link__label">教育与兴趣</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a></li>
+<li hidden data-education-hidden="true"><a class="m-link" href="#journal" hidden data-education-hidden="true"><span class="m-link__label">教育与兴趣</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a></li>
 <li><a class="m-link" href="#contact"><span class="m-link__label">联系我</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a></li>
 </ul>
 </nav>
 </div>
 </section>
-<!-- work: case studies: five large cards on a horizontal track (demo: five client launches) (animation: scene:work) -->
+<!-- work: six design categories on a horizontal track (animation: scene:work) -->
 <section aria-labelledby="work-title" data-8b-section="work" id="work">
 <div aria-hidden="true" class="work__plate"></div>
 <div class="work__stage">
 <div class="work__head">
 <h2 class="m-text-3" id="work-title">设计分类<span aria-hidden="true" class="m-dot"></span></h2>
-<p class="m-text-5 work__lead">设计方向包括商业海报、电商图片、品牌视觉和社交媒体内容。以下图片仅作展示示意，并非个人作品。</p>
+<p class="m-text-5 work__lead">设计方向涵盖商业海报、电商视觉、品牌视觉、本地生活、包装设计与效果图。以下图片仅作展示示意，并非个人作品。</p>
 </div>
 <div class="work__window">
-<ul class="work__track" data-8b-fixed="5" data-8b-items=":scope &gt; .case">
+<ul class="work__track" data-8b-fixed="6" data-8b-items=":scope &gt; .case">
 <li class="case">
-<div class="case__media"><img alt="模板氛围示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-00.jpg" width="1600"/></div>
-<span class="m-badge case__tag">海报视觉 · 示意</span>
-<div class="case__text"><h3 class="m-text-4 case__name">商业海报</h3><p class="m-text-5 case__line">通过清晰的排版，突出信息重点。</p></div>
+<div class="case__media"><img alt="商业海报示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-00.jpg" width="1600"/></div>
+<span class="m-badge case__tag">商业海报 · 示意</span>
+<div class="case__text"><h3 class="m-text-4 case__name">商业海报</h3><p class="m-text-5 case__line">通过清晰的排版与主视觉，突出宣传主题和信息重点。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="模板氛围示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-01.jpg" width="1600"/></div>
-<span class="m-badge case__tag">商品传播 · 示意</span>
-<div class="case__text"><h3 class="m-text-4 case__name">电商视觉</h3><p class="m-text-5 case__line">突出商品特点，让用户快速获取关键信息。</p></div>
+<div class="case__media"><img alt="电商视觉示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-01.jpg" width="1600"/></div>
+<span class="m-badge case__tag">电商视觉 · 示意</span>
+<div class="case__text"><h3 class="m-text-4 case__name">电商视觉</h3><p class="m-text-5 case__line">突出商品特点与核心卖点，让用户快速获取关键信息。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="模板氛围示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-02.jpg" width="1600"/></div>
+<div class="case__media"><img alt="品牌视觉示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-02.jpg" width="1600"/></div>
 <span class="m-badge case__tag">品牌视觉 · 示意</span>
-<div class="case__text"><h3 class="m-text-4 case__name">品牌内容</h3><p class="m-text-5 case__line">结合品牌风格，保持视觉表达的一致性。</p></div>
+<div class="case__text"><h3 class="m-text-4 case__name">品牌视觉</h3><p class="m-text-5 case__line">统一色彩、字体与图形语言，建立清晰一致的品牌风格。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="模板氛围示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-03.jpg" width="1600"/></div>
-<span class="m-badge case__tag">线上内容 · 示意</span>
-<div class="case__text"><h3 class="m-text-4 case__name">社交媒体</h3><p class="m-text-5 case__line">结合不同平台的特点，提升内容的吸引力。</p></div>
+<div class="case__media"><img alt="本地生活示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-03.jpg" width="1600"/></div>
+<span class="m-badge case__tag">本地生活 · 示意</span>
+<div class="case__text"><h3 class="m-text-4 case__name">本地生活</h3><p class="m-text-5 case__line">围绕门店、服务与活动，呈现清晰的本地生活宣传内容。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><img alt="模板氛围示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-04.jpg" width="1600"/></div>
-<span class="m-badge case__tag">视觉引导 · 示意</span>
-<div class="case__text"><h3 class="m-text-4 case__name">宣传设计</h3><p class="m-text-5 case__line">设计不同版本的宣传图，持续优化展示效果。</p></div>
+<div class="case__media"><img alt="包装设计示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-11.jpg" width="1600"/></div>
+<span class="m-badge case__tag">包装设计 · 示意</span>
+<div class="case__text"><h3 class="m-text-4 case__name">包装设计</h3><p class="m-text-5 case__line">结合品牌风格与产品特点，呈现包装结构、版式与应用效果。</p></div>
 </li>
-</ul>
+<li class="case">
+<div class="case__media"><img alt="效果图示意图片，非个人作品" class="case__img" height="1000" loading="lazy" src="assets/studio-15.jpg" width="1600"/></div>
+<span class="m-badge case__tag">效果图 · 示意</span>
+<div class="case__text"><h3 class="m-text-4 case__name">效果图</h3><p class="m-text-5 case__line">通过场景、材质与光影，直观展示设计方案的视觉效果。</p></div>
+</li></ul>
 </div>
 </div>
 </section>
@@ -867,32 +892,32 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <div class="again__stage">
 <div class="again__head">
 <h2 class="m-text-3" id="again-title">设计关键词<span aria-hidden="true" class="m-dot"></span></h2>
-<p class="m-text-5 again__lead">从需求沟通到设计交付，将专业知识与商业设计经验融入每个环节。配图仅作风格示意。</p>
+<p class="m-text-5 again__lead">从需求沟通到设计交付，将专业知识与商业设计经验融入每个环节。</p>
 </div>
 <div class="again__swing">
 <ul class="again__wheel" data-8b-items=":scope &gt; .partner">
 <li class="partner">
-<div class="partner__card"><img alt="模板氛围示意图片，非个人作品" class="partner__img" height="1125" loading="lazy" src="assets/studio-05.jpg" width="900"/>
+<div class="partner__card"><img class="partner__img" src="assets/keywords/hierarchy.webp" width="1100" height="733" alt="编辑版式与大小分明的字体，展示信息层级（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">信息层级</h3><p class="m-text partner__line">让重点一目了然。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img alt="模板氛围示意图片，非个人作品" class="partner__img" height="1125" loading="lazy" src="assets/studio-06.jpg" width="900"/>
+<div class="partner__card"><img class="partner__img" src="assets/keywords/brand.webp" width="1100" height="670" alt="设计色卡与统一配色，展示品牌视觉风格（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">品牌风格</h3><p class="m-text partner__line">保持品牌风格统一。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img alt="模板氛围示意图片，非个人作品" class="partner__img" height="1125" loading="lazy" src="assets/studio-07.jpg" width="900"/>
+<div class="partner__card"><img class="partner__img" src="assets/keywords/content.webp" width="1100" height="1650" alt="内容创作者使用相机与电脑制作视觉内容（示意配图）" style="object-position: 50% 43%;" loading="lazy" decoding="async"/>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">内容设计</h3><p class="m-text partner__line">兼顾内容传播与转化效果。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img alt="模板氛围示意图片，非个人作品" class="partner__img" height="1125" loading="lazy" src="assets/studio-08.jpg" width="900"/>
+<div class="partner__card"><img class="partner__img" src="assets/keywords/iteration.webp" width="1100" height="733" alt="在纸上绘制界面线框与方案草图（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">方案优化</h3><p class="m-text partner__line">对比不同方案，优化视觉引导。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img alt="模板氛围示意图片，非个人作品" class="partner__img" height="1125" loading="lazy" src="assets/studio-09.jpg" width="900"/>
+<div class="partner__card"><img class="partner__img" src="assets/keywords/teamwork.webp" width="1100" height="619" alt="团队围绕便签讨论需求和设计方案（示意配图）" style="object-position: 48% 50%;" loading="lazy" decoding="async"/>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">高效协作</h3><p class="m-text partner__line">准确把握运营和业务需求。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img alt="模板氛围示意图片，非个人作品" class="partner__img" height="1125" loading="lazy" src="assets/studio-10.jpg" width="900"/>
+<div class="partner__card"><img class="partner__img" src="assets/keywords/platforms.webp" width="1100" height="733" alt="电脑与手机展示同一社交媒体页面（示意配图）" style="object-position: 85% 50%;" loading="lazy" decoding="async"/>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">多平台设计</h3><p class="m-text partner__line">熟悉不同地区和平台的视觉偏好。</p></div></div>
 </li>
 </ul>
@@ -957,7 +982,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <section aria-labelledby="method-title" data-8b-section="method" id="method">
 <div class="method__head">
 <h2 class="m-text-3" data-8b-motion="rise" id="method-title">工作经历<span aria-hidden="true" class="m-dot"></span></h2>
-<p class="m-text-5 method__lead" data-8b-motion="ink" data-8b-split="words">2019年8月—至今 · 自营设计工作室。承接商业设计项目，累计完成2000+案例，涵盖海报、电商图与社交媒体视觉。</p>
+<p class="m-text-5 method__lead" data-8b-motion="ink" data-8b-split="words">2019年8月至今 · 自营设计工作室。承接商业设计项目，累计完成2000+案例，涵盖海报、电商视觉、品牌VI、包装设计、本地生活服务设计、效果图。</p>
 </div>
 <div class="method__body">
 <div aria-hidden="true" class="method__ring" data-8b-fixed="4" data-8b-items=":scope &gt; .method__station">
@@ -1000,7 +1025,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 </div>
 </section>
 <!-- journal: news and articles: four stories beside a sticky photo frame (animation: scene:journal) -->
-<section aria-labelledby="journal-title" data-8b-section="journal" id="journal">
+<section aria-labelledby="journal-title" data-8b-section="journal" id="journal" hidden data-education-hidden="true">
 <div class="journal__head">
 <h2 class="m-text-3" data-8b-motion="rise" id="journal-title">教育与兴趣<span aria-hidden="true" class="m-dot"></span></h2>
 </div>
@@ -1027,7 +1052,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <details class="faq__item"><summary class="m-text-7">有怎样的工作经历？<span aria-hidden="true" class="faq__mark"></span></summary><p class="m-text faq__answer">2019年8月至今，运营自营设计工作室，累计完成2000+商业设计案例。</p></details>
 <details class="faq__item"><summary class="m-text-7">可以与内容团队协作吗？<span aria-hidden="true" class="faq__mark"></span></summary><p class="m-text faq__answer">可以。我具备多个行业的沟通与协作经验，能够根据运营和业务需求开展设计，适应快节奏的团队工作。</p></details>
 <details class="faq__item"><summary class="m-text-7">教育背景是什么？<span aria-hidden="true" class="faq__mark"></span></summary><p class="m-text faq__answer">2019年—2023年，就读山东艺术学院，视觉传达设计专业。</p></details>
-<details class="faq__item"><summary class="m-text-7">如何联系？<span aria-hidden="true" class="faq__mark"></span></summary><p class="m-text faq__answer">可通过邮箱 cheonu319@qq.com、电话 +86 189 6350 9916 或微信 UnoehC 联系。</p></details>
+<details class="faq__item"><summary class="m-text-7">如何联系？<span aria-hidden="true" class="faq__mark"></span></summary><p class="m-text faq__answer">可通过邮箱 cheonu319@qq.com、电话 +86 189 6350 9916、+86 195 5413 8338 或微信 UnoehC 联系。</p></details>
 </div>
 </section>
 <!-- contact: violet contact field: big "Let's talk", email, two offices with phones, and a form (placeholders) (animation: scene:contact) -->
@@ -1037,7 +1062,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <div class="contact__info">
 <p class="m-text-5 contact__lead">欢迎交流设计需求与合作机会。可以通过邮件、电话或微信联系我。</p>
 <a class="contact__mail" href="mailto:cheonu319@qq.com"><span>cheonu319@qq.com</span></a>
-<dl class="contact__places"><div><dt class="m-text-7">电话</dt><dd class="m-text"><a href="tel:+8618963509916">+86 189 6350 9916</a></dd></div><div><dt class="m-text-7">微信</dt><dd class="m-text">UnoehC<br/>+60 175764071</dd></div></dl>
+<dl class="contact__places"><div><dt class="m-text-7">电话</dt><dd class="m-text"><a href="tel:+8618963509916">+86 189 6350 9916</a></dd><dd class="m-text"><a href="tel:+8619554138338">+86 195 5413 8338</a></dd></div><div><dt class="m-text-7">微信</dt><dd class="m-text">UnoehC<br/>+60 175764071</dd></div></dl>
 </div>
 <div class="contact__direct m-surface"><p class="m-text-7">先聊聊你的需求</p><p class="m-text-5">欢迎介绍项目背景、设计需求和预期效果。</p><a class="m-btn" href="mailto:cheonu319@qq.com"><span class="m-btn__label">发送邮件</span></a></div>
 </div>
@@ -1045,7 +1070,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 </main>
 <!-- footer: closing greeting "Bye" with the round photo full stop, link columns, newsletter, copyright and the Design: 8B credit (animation: scene:footer) -->
 <footer data-8b-section="footer" id="footer">
-<p class="m-text-2 footer__bye" style="--len:2"><span class="footer__word">再见</span><span aria-hidden="true" class="footer__period"><span class="footer__aperture"><img alt="张天宇的个人照片" class="footer__img" height="1164" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="990"/><span class="footer__tint"></span></span></span></p>
+<p class="m-text-2 footer__bye" style="--len:4"><span class="footer__word">無限进步</span><span aria-hidden="true" class="footer__period"><span class="footer__aperture"><span class="footer__brand" role="img" aria-label="Tianyu 签名"><img class="footer__signature" src="assets/tianyu-logo.png" alt="" aria-hidden="true" width="893" height="362"/></span><span class="footer__tint"></span></span></span></p>
 <div class="footer__grid">
 <nav aria-label="Footer" class="footer__col">
 <p class="m-text-6 footer__label">浏览</p>
@@ -1053,12 +1078,13 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <a class="m-link-2" href="#capabilities">专业技能</a>
 <a class="m-link-2" href="#method">工作经历</a>
 <a class="m-link-2" href="#studio">关于我</a>
-<a class="m-link-2" href="#journal">教育与兴趣</a>
+<a class="m-link-2" href="#journal" hidden data-education-hidden="true">教育与兴趣</a>
 </nav>
 <div class="footer__col">
 <p class="m-text-6 footer__label">联系</p>
 <a class="m-link-2" href="mailto:cheonu319@qq.com">cheonu319@qq.com</a>
 <a class="m-link-2" href="tel:+8618963509916">+86 189 6350 9916</a>
+<a class="m-link-2" href="tel:+8619554138338">+86 195 5413 8338</a>
 </div>
 <div class="footer__col">
 <p class="m-text-6 footer__label">兴趣爱好</p>
@@ -1066,7 +1092,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 </div>
 <div class="footer__col"><p class="m-text-7">让视觉传递价值<span aria-hidden="true" class="m-dot"></span></p><p class="m-text">张天宇 · 视觉设计师</p></div>
 </div>
-<div class="footer__legal m-text-6"><p>© 2026 张天宇 · Design: <a data-8b-credit="" href="https://8b.com/" style="color:inherit">8B</a></p><p>视觉设计 · 个人网站</p></div>
+<div class="footer__legal m-text-6"><p>© 2026 张天宇 · Design: <span>ZhangTianyu</span></p><p>视觉设计 · 个人网站</p></div>
 </footer>
 <script data-8b-part="section-script:navigation">
 (() => {
@@ -1388,7 +1414,7 @@ motionKit.scene('footer', () => {
   const footer = document.getElementById('footer');
   const aperture = footer.querySelector('.footer__aperture');
   const period = footer.querySelector('.footer__period');
-  motionKit.measure(() => motionKit.set(footer, { '--footer-dot': (period.offsetWidth / aperture.offsetWidth).toFixed(4) }));
+  motionKit.measure(() => motionKit.set(footer, { '--footer-dot': (parseFloat(getComputedStyle(period).fontSize) * 0.19 / aperture.offsetWidth).toFixed(4) }));
 });
 </script>
 <script data-8b-part="mobile-scroll-fix">

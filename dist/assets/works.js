@@ -1,5 +1,5 @@
 (() => {
-  const categories = {poster:'商业海报',commerce:'电商视觉',brand:'品牌视觉',local:'本地生活',social:'效果图'};
+  const categories = {poster:'商业海报',commerce:'电商视觉',brand:'品牌视觉',local:'本地生活',packaging:'包装设计',illustration:'文创/插画',social:'效果图'};
   const grid = document.getElementById('project-grid');
   const count = document.getElementById('result-count');
   const filters = [...document.querySelectorAll('[data-filter]')];
@@ -8,7 +8,16 @@
   const zoomButton = document.getElementById('toggle-zoom');
   const canvas = document.querySelector('.image-canvas');
   let projects = [], activeFilter = 'all', currentId = null, trigger = null;
-  const visibleProjects = () => projects.filter(p => activeFilter === 'all' || p.category === activeFilter);
+  const visibleProjects = () => {
+    if (activeFilter !== 'all') return projects.filter(p => p.category === activeFilter);
+    // Interleave the categories deterministically, keeping detail navigation in the same order.
+    const groups = Object.keys(categories).map(category => projects.filter(p => p.category === category));
+    const mixed = [];
+    for (let i = 0; i < Math.max(0, ...groups.map(group => group.length)); i++) {
+      groups.forEach(group => { if (group[i]) mixed.push(group[i]); });
+    }
+    return mixed;
+  };
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   let observer = null;
   if ('IntersectionObserver' in window && !motion.matches) {
@@ -29,27 +38,54 @@
     document.body.style.overflow = locked ? 'hidden' : '';
     if (locked) window.motionKit?.wheel?.stop();else window.motionKit?.wheel?.start();
   };
+  let masonryObserver = null;
+  let masonryFrame = null;
+  const layoutMasonry = () => {
+    masonryFrame = null;
+    const measurements = [...grid.querySelectorAll('.project-card')].map(card => ({
+      card, span: Math.ceil(card.querySelector('.project-card__button').getBoundingClientRect().height + 40)
+    }));
+    measurements.forEach(({card, span}) => card.style.setProperty('--masonry-span', span));
+    updateProgress();
+  };
+  const scheduleMasonry = () => {
+    if (masonryFrame === null) masonryFrame = requestAnimationFrame(layoutMasonry);
+  };
+  const observeMasonry = () => {
+    masonryObserver?.disconnect();
+    layoutMasonry();
+    if ('ResizeObserver' in window) {
+      masonryObserver ??= new ResizeObserver(scheduleMasonry);
+      grid.querySelectorAll('.project-card__button').forEach(button => masonryObserver.observe(button));
+    }
+  };
+  addEventListener('resize', scheduleMasonry);
+  (document.fonts?.ready ?? Promise.resolve()).then(scheduleMasonry);
   function render() {
+    grid.dataset.category = activeFilter;
     const fragment = document.createDocumentFragment();
     visibleProjects().forEach((p,index) => {
       const card = document.createElement('article');card.className = 'project-card reveal';
       card.dataset.category = p.category;
       const button = document.createElement('button');button.type='button';button.className='project-card__button';button.dataset.project=p.id;
-      button.setAttribute('aria-label','查看'+p.title+'，展示示意');
+      const placeholder = p.placeholder !== false;
+      button.setAttribute('aria-label','查看'+p.title+(placeholder?'，展示示意':''));
       // All strings below come from the local authored project catalogue.
       const media = document.createElement('div');media.className='project-card__media';
-      if (p.category === 'poster' || p.category === 'commerce') {
+      const portraitPlaceholder = !p.width && ['poster','commerce','packaging'].includes(p.category);
+      if (p.width && p.height) {
+        media.style.aspectRatio = p.width + ' / ' + p.height;
+      } else if (portraitPlaceholder) {
         media.classList.add('project-card__media--portrait');
         media.style.aspectRatio = '3 / 4';
       }
-      const image = document.createElement('img');image.src=p.image;image.alt=p.title+'，模板示意图片，非个人作品';image.loading=index<2?'eager':'lazy';image.width=1200;image.height=900;
-      if (p.category === 'poster' || p.category === 'commerce') { image.width = 900; image.height = 1200; }
-      const tag=document.createElement('span');tag.className='project-card__tag';tag.textContent=categories[p.category];
+      const image = document.createElement('img');image.src=p.image;image.alt=p.title+(placeholder?'，模板示意图片，非个人作品':'');image.loading=index<2?'eager':'lazy';image.decoding='async';image.width=p.width || 1200;image.height=p.height || 900;
+      if (portraitPlaceholder) { image.width = 900; image.height = 1200; }
       const arrow=document.createElement('span');arrow.className='project-card__arrow';arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');
-      media.append(image,tag,arrow);
+      media.append(image,arrow);
       const meta=document.createElement('div');meta.className='project-card__meta';
       const heading=document.createElement('h2');heading.textContent=p.title;
-      const badge=document.createElement('span');badge.textContent='展示示意';meta.append(heading,badge);
+      const badge=document.createElement('span');badge.textContent=placeholder?'展示示意':'作品展示';meta.append(heading,badge);
       const caption=document.createElement('p');caption.className='project-card__caption';caption.textContent=p.focus;
       button.append(media,meta,caption);button.addEventListener('click',()=>{trigger=button;openProject(p.id);});card.append(button);fragment.append(card);
     });
@@ -62,8 +98,9 @@
       fragment.append(empty);
     }
     grid.replaceChildren(fragment);
+    observeMasonry();
     if(observer)grid.querySelectorAll('.reveal').forEach(n=>observer.observe(n));
-    count.textContent=visibleProjects().length+' 个展示示意';
+    count.textContent=visibleProjects().length+' 个案例';
     filters.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===activeFilter)));
   }
   function openProject(id) {
@@ -75,7 +112,10 @@
     document.getElementById('detail-category').textContent=categories[p.category];
     document.getElementById('detail-description').textContent=p.description;
     document.getElementById('detail-focus').textContent=p.focus;
-    const image=document.getElementById('detail-image');image.src=p.image;image.alt=p.title+'，模板示意，非个人作品';
+    const placeholder=p.placeholder !== false;
+    document.getElementById('detail-notice').textContent=placeholder?'展示示意 · 非个人作品':categories[p.category]+' · 作品展示';
+    document.getElementById('viewer-label').textContent=placeholder?'图片预览 · 模板示意':'图片预览 · '+p.title;
+    const image=document.getElementById('detail-image');image.src=p.image;image.alt=p.title+(placeholder?'，模板示意，非个人作品':'');
     if(!detail.open)detail.showModal();
     detail.scrollTop=0;syncScrollLock();updateURL();
   }
@@ -107,8 +147,12 @@
   const progress=document.querySelector('.reading-progress');
   const updateProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';};
   addEventListener('scroll',updateProgress,{passive:true});addEventListener('resize',updateProgress);
-  function readURL(){const url=new URL(location.href);const category=url.searchParams.get('category');activeFilter=categories[category]?category:'all';const id=url.hash.startsWith('#case=')?url.hash.slice(6):null;const project=projects.find(p=>p.id===id);if(project&&activeFilter!=='all'&&project.category!==activeFilter)activeFilter=project.category;render();if(project)openProject(project.id);else if(detail.open)detail.close();}
-  Promise.all([fetch('assets/projects.json').then(r=>{if(!r.ok)throw Error('catalogue');return r.json();})]).then(([data])=>{
+  function readURL(){const url=new URL(location.href);const category=url.searchParams.get('category') || document.body.dataset.defaultCategory;activeFilter=categories[category]?category:'all';const id=url.hash.startsWith('#case=')?url.hash.slice(6):null;const project=projects.find(p=>p.id===id);if(project&&activeFilter!=='all'&&project.category!==activeFilter)activeFilter=project.category;render();if(project)openProject(project.id);else if(detail.open)detail.close();}
+  const embeddedCatalogue = document.getElementById('project-catalogue');
+  const catalogue = location.protocol === 'file:' && embeddedCatalogue
+    ? Promise.resolve().then(() => JSON.parse(embeddedCatalogue.textContent))
+    : fetch('assets/projects.json', {cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('catalogue');return r.json();});
+  Promise.all([catalogue]).then(([data])=>{
     projects=data;readURL();updateProgress();addEventListener('popstate',readURL);addEventListener('hashchange',readURL);
   }).catch(()=>{
     count.textContent='案例列表暂时无法加载';const message=document.createElement('p');message.textContent='请刷新页面重试，或通过邮箱联系我：cheonu319@qq.com。';grid.replaceChildren(message);

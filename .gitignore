@@ -2,3 +2,5 @@
 .openai/
 .env
 .env.*
+
+dist/works-local-preview.html

@@ -48,3 +48,46 @@ Loaded from images.unsplash.com. Free to use under the [Unsplash License](https:
 - Lenis 1.3.4, darkroom.engineering, MIT: https://github.com/darkroomengineering/lenis
 
 Personal portrait and Tianyu logo supplied by the site owner. Stock images are illustrative, not personal projects.
+
+## Design keyword photographs (local replacement)
+
+These six stock photographs illustrate design concepts; they do not represent the owner’s personal work or team. Licensed under the Unsplash License: https://unsplash.com/license
+
+- 信息层级: Brands&People — https://unsplash.com/photos/V9zInThgKa4 — `assets/keywords/hierarchy.webp`
+- 品牌风格: Andy Brown — https://unsplash.com/photos/9bC6YPVk0Ts — `assets/keywords/brand.webp`
+- 内容设计: Rodrigo Rodrigues | WOLF Λ R T — https://unsplash.com/photos/sPeIJ0ebl8c — `assets/keywords/content.webp`
+- 方案优化: Kelly Sikkema — https://unsplash.com/photos/Cg60_WXjvC4 — `assets/keywords/iteration.webp`
+- 高效协作: Vitaly Gariev — https://unsplash.com/photos/Imk2h0pyOvo — `assets/keywords/teamwork.webp`
+- 多平台设计: Austin Distel — https://unsplash.com/photos/tLZhFRLj6nY — `assets/keywords/platforms.webp`
+
+## 效果图作品素材
+
+`assets/cases/render-01.webp` 至 `render-15.webp` 来自网站所有者提供的「效果图」素材目录，已转为网页用WebP并保留画面原比例，不属于模板配图。案例标题与说明依据画面内容整理。
+
+## 包装作品素材
+
+`assets/cases/packaging-work-01.webp` 至 `packaging-work-06.webp` 来自网站所有者提供的「包装」素材目录，转换为WebP并保留原图比例。作品名称按源文件名整理，描述结合图中包装视觉撰写。
+
+## 商业海报作品素材
+
+`assets/cases/poster-work-01.webp` 至 `poster-work-07.webp` 来自网站所有者提供的「商业海报」目录。网页文件保留原始分辨率与比例，转换为WebP；标题依据源文件名，描述结合画面内容整理。
+
+## 品牌视觉作品素材
+
+`assets/cases/brand-work-01.webp` 至 `brand-work-03.webp` 来自网站所有者提供的「品牌视觉」目录。网页文件保留原始分辨率与比例，转换为WebP；标题依据源文件名，描述结合画面内容整理。
+
+## 文创/插画作品素材
+
+`assets/cases/illustration-work-01.webp` 至 `illustration-work-06.webp` 来自网站所有者提供的「文创:插画设计」目录，保留原始分辨率、比例和透明背景并转换为WebP。作品名优先沿用文件名，纯数字名称依据画面暂命名，说明结合画面内容整理。
+
+## 电商视觉作品素材
+
+`assets/cases/commerce-work-01.webp` 至 `commerce-work-04.webp` 来自网站所有者提供的「电商视觉」目录，保留原始分辨率与比例并转换为WebP。作品名依据源文件名，描述结合画面中的产品展示与视觉编排整理。
+
+## 本地生活作品素材
+
+`assets/cases/local-work-01.webp` 与 `local-work-02.webp` 来自网站所有者提供的「本地生活」目录，保留原始分辨率与横向比例并转换为WebP。作品名依据源文件名，描述结合画面内容整理。
+
+## 新增商业海报与效果图
+
+新增商业海报素材：`poster-work-08.webp` 至 `poster-work-10.webp`；新增效果图素材：`render-16.webp`、`render-18.webp` 至 `render-20.webp`。素材由网站所有者提供，保留原始分辨率与比例并压缩为WebP；原有43个案例及其文案保持不变。
