@@ -82,7 +82,9 @@
       const image = document.createElement('img');image.src=p.image;image.alt=p.title+(placeholder?'，模板示意图片，非个人作品':'');image.loading=index<2?'eager':'lazy';image.decoding='async';image.width=p.width || 1200;image.height=p.height || 900;
       if (portraitPlaceholder) { image.width = 900; image.height = 1200; }
       const arrow=document.createElement('span');arrow.className='project-card__arrow';arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');
-      media.append(image,arrow);
+      const picture=document.createElement('picture');
+      if(p.mobileImage){const source=document.createElement('source');source.media='(max-width: 899px)';source.srcset=p.mobileImage;picture.append(source);}
+      picture.append(image);media.append(picture,arrow);
       const meta=document.createElement('div');meta.className='project-card__meta';
       const heading=document.createElement('h2');heading.textContent=p.title;
       const badge=document.createElement('span');badge.textContent=placeholder?'展示示意':'作品展示';meta.append(heading,badge);
@@ -115,6 +117,7 @@
     const placeholder=p.placeholder !== false;
     document.getElementById('detail-notice').textContent=placeholder?'展示示意 · 非个人作品':categories[p.category]+' · 作品展示';
     document.getElementById('viewer-label').textContent=placeholder?'图片预览 · 模板示意':'图片预览 · '+p.title;
+    const mobileSource=document.getElementById('detail-mobile-source');mobileSource.srcset=p.mobileImage || p.image;
     const image=document.getElementById('detail-image');image.src=p.image;image.alt=p.title+(placeholder?'，模板示意，非个人作品':'');
     if(!detail.open)detail.showModal();
     detail.scrollTop=0;syncScrollLock();updateURL();

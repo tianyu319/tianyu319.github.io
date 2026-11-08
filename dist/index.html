@@ -786,9 +786,9 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 #work .work__lead { width: 100%; max-width: none; font-size: clamp(18px, 1.65vw, 28px); line-height: 1.65; }
 #work .category-preview { display: grid; place-items: center; background: #20252b; }
 #work .category-preview > img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; }
-#work .category-preview--brand > img { object-position: 50% 45%; }
-#work .category-preview--local > img { object-position: 55% 45%; }
-#work .category-preview--render > img { object-position: 50% 45%; }
+#work .category-preview--brand img { object-position: 50% 45%; }
+#work .category-preview--local img { object-position: 55% 45%; }
+#work .category-preview--render img { object-position: 50% 45%; }
 @media (max-width: 899px) {
   #work .work__head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   #work .work__lead { font-size: 16px; line-height: 1.6; }
@@ -802,6 +802,11 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
  #capabilities .capabilities__head { grid-template-columns: minmax(0, 1fr); gap: 18px; }
  #capabilities .capabilities__lead { font-size: 16px; line-height: 1.6; }
 }
+</style>
+<style data-8b-part="mobile-images">
+picture.mobile-responsive { display: block; width: 100%; height: 100%; }
+#work .category-preview > picture { min-width: 0; min-height: 0; }
+#work .category-preview picture img { display: block; width: 100%; height: 100%; object-fit: cover; }
 </style>
 </head>
 <body class="m-text">
@@ -840,7 +845,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 hero__lead">我是<span style="color: var(--color-3)">张天宇</span>，一名<span style="color: var(--color-3)">视觉设计师</span>。专注商业平面设计和线上内容设计，让品牌信息更清晰、更有吸引力。</p>
 <a class="m-link hero__link" href="#work"><span class="m-link__label">查看设计分类</span><svg aria-hidden="true" class="m-link__arrow" viewbox="0 0 16 16"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a>
 </div>
-<h1 class="m-text-2 hero__title" id="hero-title" style="--len:5"><span class="hero__word"><span class="hero__mask"><span class="hero__glyphs">Hello</span></span></span><span aria-hidden="true" class="hero__period"><span class="hero__stage"><span class="hero__orbit"><span class="hero__moon"></span></span><span class="hero__aperture"><img alt="张天宇的个人照片" class="hero__img" fetchpriority="high" height="1164" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="990"/><span class="hero__tint"></span></span></span></span></h1>
+<h1 class="m-text-2 hero__title" id="hero-title" style="--len:5"><span class="hero__word"><span class="hero__mask"><span class="hero__glyphs">Hello</span></span></span><span aria-hidden="true" class="hero__period"><span class="hero__stage"><span class="hero__orbit"><span class="hero__moon"></span></span><span class="hero__aperture"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/zhang-tianyu-mobile.webp"/><img alt="张天宇的个人照片" class="hero__img" fetchpriority="high" height="1164" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="990"/></picture><span class="hero__tint"></span></span></span></span></h1>
 </section>
 <!-- statement: two-line statement of what the studio does, a lead paragraph and an index of links into the page (animation: scene:statement) -->
 <section aria-labelledby="statement-title" data-8b-section="statement" id="statement">
@@ -870,32 +875,32 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <div class="work__window">
 <ul class="work__track" data-8b-fixed="6" data-8b-items=":scope &gt; .case">
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--poster"><img src="assets/category-covers/poster-ai.webp" alt="商业海报主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--poster"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/poster-ai.webp"/><img src="assets/category-covers/poster-ai.webp" alt="商业海报主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></picture></div></div>
 <span class="m-badge case__tag">商业海报</span>
 <div class="case__text"><h3 class="m-text-4 case__name">商业海报</h3><p class="m-text-5 case__line">通过清晰的排版与主视觉，突出宣传主题和信息重点。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--commerce"><img src="assets/category-covers/commerce-ai.webp" alt="电商视觉主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--commerce"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/commerce-ai.webp"/><img src="assets/category-covers/commerce-ai.webp" alt="电商视觉主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></picture></div></div>
 <span class="m-badge case__tag">电商视觉</span>
 <div class="case__text"><h3 class="m-text-4 case__name">电商视觉</h3><p class="m-text-5 case__line">突出商品特点与核心卖点，让用户快速获取关键信息。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--brand"><img src="assets/category-covers/brand-ai.webp" alt="品牌视觉主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--brand"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/brand-ai.webp"/><img src="assets/category-covers/brand-ai.webp" alt="品牌视觉主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></picture></div></div>
 <span class="m-badge case__tag">品牌视觉</span>
 <div class="case__text"><h3 class="m-text-4 case__name">品牌视觉</h3><p class="m-text-5 case__line">统一色彩、字体与图形语言，建立清晰一致的品牌风格。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--local"><img src="assets/category-covers/local-ai.webp" alt="本地生活主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--local"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/local-ai.webp"/><img src="assets/category-covers/local-ai.webp" alt="本地生活主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></picture></div></div>
 <span class="m-badge case__tag">本地生活</span>
 <div class="case__text"><h3 class="m-text-4 case__name">本地生活</h3><p class="m-text-5 case__line">围绕门店、服务与活动，呈现清晰的本地生活宣传内容。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--packaging"><img src="assets/category-covers/packaging-ai.webp" alt="包装设计主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--packaging"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/packaging-ai.webp"/><img src="assets/category-covers/packaging-ai.webp" alt="包装设计主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></picture></div></div>
 <span class="m-badge case__tag">包装设计</span>
 <div class="case__text"><h3 class="m-text-4 case__name">包装设计</h3><p class="m-text-5 case__line">结合品牌风格与产品特点，呈现包装结构、版式与应用效果。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--render"><img src="assets/category-covers/render-ai.webp" alt="效果图主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--render"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/render-ai.webp"/><img src="assets/category-covers/render-ai.webp" alt="效果图主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></picture></div></div>
 <span class="m-badge case__tag">效果图</span>
 <div class="case__text"><h3 class="m-text-4 case__name">效果图</h3><p class="m-text-5 case__line">通过场景、材质与光影，直观展示设计方案的视觉效果。</p></div>
 </li></ul>
@@ -912,27 +917,27 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <div class="again__swing">
 <ul class="again__wheel" data-8b-items=":scope &gt; .partner">
 <li class="partner">
-<div class="partner__card"><img class="partner__img" src="assets/keywords/hierarchy.webp" width="1100" height="733" alt="编辑版式与大小分明的字体，展示信息层级（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/>
+<div class="partner__card"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/keywords/hierarchy.webp"/><img class="partner__img" src="assets/keywords/hierarchy.webp" width="1100" height="733" alt="编辑版式与大小分明的字体，展示信息层级（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/></picture>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">信息层级</h3><p class="m-text partner__line">让重点一目了然。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img class="partner__img" src="assets/keywords/brand.webp" width="1100" height="670" alt="设计色卡与统一配色，展示品牌视觉风格（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/>
+<div class="partner__card"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/keywords/brand.webp"/><img class="partner__img" src="assets/keywords/brand.webp" width="1100" height="670" alt="设计色卡与统一配色，展示品牌视觉风格（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/></picture>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">品牌风格</h3><p class="m-text partner__line">保持品牌风格统一。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img class="partner__img" src="assets/keywords/content.webp" width="1100" height="1650" alt="内容创作者使用相机与电脑制作视觉内容（示意配图）" style="object-position: 50% 43%;" loading="lazy" decoding="async"/>
+<div class="partner__card"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/keywords/content.webp"/><img class="partner__img" src="assets/keywords/content.webp" width="1100" height="1650" alt="内容创作者使用相机与电脑制作视觉内容（示意配图）" style="object-position: 50% 43%;" loading="lazy" decoding="async"/></picture>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">内容设计</h3><p class="m-text partner__line">兼顾内容传播与转化效果。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img class="partner__img" src="assets/keywords/iteration.webp" width="1100" height="733" alt="在纸上绘制界面线框与方案草图（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/>
+<div class="partner__card"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/keywords/iteration.webp"/><img class="partner__img" src="assets/keywords/iteration.webp" width="1100" height="733" alt="在纸上绘制界面线框与方案草图（示意配图）" style="object-position: 50% 50%;" loading="lazy" decoding="async"/></picture>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">方案优化</h3><p class="m-text partner__line">对比不同方案，优化视觉引导。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img class="partner__img" src="assets/keywords/teamwork.webp" width="1100" height="619" alt="团队围绕便签讨论需求和设计方案（示意配图）" style="object-position: 48% 50%;" loading="lazy" decoding="async"/>
+<div class="partner__card"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/keywords/teamwork.webp"/><img class="partner__img" src="assets/keywords/teamwork.webp" width="1100" height="619" alt="团队围绕便签讨论需求和设计方案（示意配图）" style="object-position: 48% 50%;" loading="lazy" decoding="async"/></picture>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">高效协作</h3><p class="m-text partner__line">准确把握运营和业务需求。</p></div></div>
 </li>
 <li class="partner">
-<div class="partner__card"><img class="partner__img" src="assets/keywords/platforms.webp" width="1100" height="733" alt="电脑与手机展示同一社交媒体页面（示意配图）" style="object-position: 85% 50%;" loading="lazy" decoding="async"/>
+<div class="partner__card"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/keywords/platforms.webp"/><img class="partner__img" src="assets/keywords/platforms.webp" width="1100" height="733" alt="电脑与手机展示同一社交媒体页面（示意配图）" style="object-position: 85% 50%;" loading="lazy" decoding="async"/></picture>
 <div class="partner__text"><span class="m-badge partner__year">设计关键词</span><h3 class="m-text-4 partner__name">多平台设计</h3><p class="m-text partner__line">熟悉不同地区和平台的视觉偏好。</p></div></div>
 </li>
 </ul>
@@ -952,7 +957,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 service__line">围绕宣传主题构建主视觉，结合图像处理、字体编排与信息层级，让海报兼顾视觉吸引力和内容可读性。</p>
 <ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">Photoshop</li><li class="m-badge">Illustrator</li><li class="m-badge">主视觉</li><li class="m-badge">信息层级</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="商业海报主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/poster-ai.webp"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/poster-ai.webp"/><img alt="商业海报主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/poster-ai.webp"/></picture></div>
 <span aria-hidden="true" class="service__shade"></span>
 <a aria-label="查看商业海报作品案例" class="service__entry" href="works.html?category=poster#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
@@ -962,7 +967,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 service__line">结合商品特点与使用场景，完成产品精修、卖点提炼和页面编排，呈现清晰统一的商品展示视觉。</p>
 <ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">产品精修</li><li class="m-badge">卖点表达</li><li class="m-badge">电商长图</li><li class="m-badge">场景合成</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="电商视觉主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/commerce-ai.webp"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/commerce-ai.webp"/><img alt="电商视觉主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/commerce-ai.webp"/></picture></div>
 <span aria-hidden="true" class="service__shade"></span>
 <a aria-label="查看电商视觉作品案例" class="service__entry" href="works.html?category=commerce#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
@@ -972,7 +977,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 service__line">从品牌定位出发，统筹标志、色彩、字体与图形语言，将品牌风格延展到画册和日常传播物料。</p>
 <ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">品牌VI</li><li class="m-badge">标志应用</li><li class="m-badge">画册排版</li><li class="m-badge">视觉规范</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="品牌视觉主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/brand-ai.webp"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/brand-ai.webp"/><img alt="品牌视觉主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/brand-ai.webp"/></picture></div>
 <span aria-hidden="true" class="service__shade"></span>
 <a aria-label="查看品牌视觉作品案例" class="service__entry" href="works.html?category=brand#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
@@ -982,7 +987,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 service__line">围绕门店、餐饮和活动推广，适配抖音、美团等平台的展示场景，让服务信息与品牌特色更清楚。</p>
 <ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">门店推广</li><li class="m-badge">餐饮视觉</li><li class="m-badge">平台头图</li><li class="m-badge">活动传播</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="本地生活主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/local-ai.webp"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/local-ai.webp"/><img alt="本地生活主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/local-ai.webp"/></picture></div>
 <span aria-hidden="true" class="service__shade"></span>
 <a aria-label="查看本地生活作品案例" class="service__entry" href="works.html?category=local#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
@@ -992,7 +997,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 service__line">结合产品特性与品牌调性，梳理包装版式、结构和材质表现，兼顾货架识别与系列视觉的一致性。</p>
 <ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">包装版式</li><li class="m-badge">结构呈现</li><li class="m-badge">材质工艺</li><li class="m-badge">系列延展</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="包装设计主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/packaging-ai.webp"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/packaging-ai.webp"/><img alt="包装设计主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/packaging-ai.webp"/></picture></div>
 <span aria-hidden="true" class="service__shade"></span>
 <a aria-label="查看包装设计作品案例" class="service__entry" href="works.html?category=packaging#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
@@ -1002,7 +1007,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 service__line">通过角色造型、动作表情与色彩搭配建立鲜明主题，将插画语言延展到贴纸、表情包和文创载体。</p>
 <ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">角色设计</li><li class="m-badge">主题插画</li><li class="m-badge">表情包</li><li class="m-badge">文创延展</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="文创/插画主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/illustration-ai.webp"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/illustration-ai.webp"/><img alt="文创/插画主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/illustration-ai.webp"/></picture></div>
 <span aria-hidden="true" class="service__shade"></span>
 <a aria-label="查看文创/插画作品案例" class="service__entry" href="works.html?category=illustration#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
@@ -1012,7 +1017,7 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 service__line">运用场景搭建、材质表现与光影组织，呈现建筑、空间、门头和产品外观，让设计方案更直观。</p>
 <ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">空间表现</li><li class="m-badge">门头场景</li><li class="m-badge">材质光影</li><li class="m-badge">产品视图</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="效果图主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/render-ai.webp"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/category-covers/render-ai.webp"/><img alt="效果图主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/render-ai.webp"/></picture></div>
 <span aria-hidden="true" class="service__shade"></span>
 <a aria-label="查看效果图作品案例" class="service__entry" href="works.html?category=social#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
@@ -1048,11 +1053,11 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <p class="m-text-5 studio__lead" data-8b-motion="ink" data-8b-split="words">我具备多个行业的设计与沟通经验，系统学习过图像处理、色彩构成和摄影基础知识。能够快速把握运营和业务需求，并转化为清晰、实用的设计方案。</p>
 </div>
 <div class="studio__collage">
-<figure class="shot shot--wide"><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-00.jpg" width="1400"/></figure>
-<figure class="shot shot--tall"><img alt="张天宇的个人照片" height="1200" loading="lazy" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="900"/></figure>
-<figure class="shot shot--tall"><img alt="模板氛围示意图片，非个人作品" height="1200" loading="lazy" src="assets/studio-02.jpg" width="900"/></figure>
-<figure class="shot shot--wide"><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-03.jpg" width="1400"/></figure>
-<figure class="shot shot--wide"><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-04.jpg" width="1400"/></figure>
+<figure class="shot shot--wide"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/studio-00.webp"/><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-00.jpg" width="1400"/></picture></figure>
+<figure class="shot shot--tall"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/zhang-tianyu-mobile.webp"/><img alt="张天宇的个人照片" height="1200" loading="lazy" src="assets/zhang-tianyu.webp" srcset="assets/zhang-tianyu-mobile.webp 540w, assets/zhang-tianyu.webp 990w" sizes="(max-width: 899px) 64vw, 600px" width="900"/></picture></figure>
+<figure class="shot shot--tall"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/studio-02.webp"/><img alt="模板氛围示意图片，非个人作品" height="1200" loading="lazy" src="assets/studio-02.jpg" width="900"/></picture></figure>
+<figure class="shot shot--wide"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/studio-03.webp"/><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-03.jpg" width="1400"/></picture></figure>
+<figure class="shot shot--wide"><picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/studio-04.webp"/><img alt="模板氛围示意图片，非个人作品" height="933" loading="lazy" src="assets/studio-04.jpg" width="1400"/></picture></figure>
 <div class="studio__roles">
 <h3 class="m-text-7" data-8b-motion="rise">个人资料<span aria-hidden="true" class="m-dot"></span></h3>
 <ul data-8b-items=":scope &gt; li">
@@ -1071,10 +1076,10 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 </div>
 <div class="journal__body">
 <div class="journal__frame" data-8b-fixed="4" data-8b-items=":scope &gt; img">
-<img alt="模板氛围示意图片，非个人作品" class="journal__shot" height="1250" loading="lazy" src="assets/studio-00.jpg" width="1000"/>
-<img alt="模板氛围示意图片，非个人作品" class="journal__shot" height="1250" loading="lazy" src="assets/studio-01.jpg" width="1000"/>
-<img alt="模板氛围示意图片，非个人作品" class="journal__shot" height="1250" loading="lazy" src="assets/studio-02.jpg" width="1000"/>
-<img alt="模板氛围示意图片，非个人作品" class="journal__shot" height="1250" loading="lazy" src="assets/studio-03.jpg" width="1000"/>
+<picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/studio-00.webp"/><img alt="模板氛围示意图片，非个人作品" class="journal__shot" height="1250" loading="lazy" src="assets/studio-00.jpg" width="1000"/></picture>
+<picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/studio-01.webp"/><img alt="模板氛围示意图片，非个人作品" class="journal__shot" height="1250" loading="lazy" src="assets/studio-01.jpg" width="1000"/></picture>
+<picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/studio-02.webp"/><img alt="模板氛围示意图片，非个人作品" class="journal__shot" height="1250" loading="lazy" src="assets/studio-02.jpg" width="1000"/></picture>
+<picture class="mobile-responsive"><source media="(max-width: 899px)" srcset="assets/mobile/studio-03.webp"/><img alt="模板氛围示意图片，非个人作品" class="journal__shot" height="1250" loading="lazy" src="assets/studio-03.jpg" width="1000"/></picture>
 </div>
 <ol class="journal__list" data-8b-fixed="4" data-8b-items=":scope &gt; .story">
 <li class="story"><p class="m-text-6 story__meta">教育背景 · 2019年—2023年</p><h3 class="m-text-7">山东艺术学院 · 视觉传达设计</h3><p class="m-text story__text">学习视觉传达设计专业知识，掌握图像处理、色彩构成和摄影基础。</p></li>

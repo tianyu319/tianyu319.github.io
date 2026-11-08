@@ -22,3 +22,7 @@
 仓库为 tianyu319/tianyu319.github.io，使用 GitHub Actions 部署 GitHub Pages。推送 main 分支后自动发布 dist/，同时保留根路径与 /tianyu/ 路径。网站地址：https://tianyu319.github.io/。
 
 该版本已将字体改为本地资源。不包含 Sites 内部项目配置、Git 历史、凭据或令牌。GitHub Pages 的大陆访问质量需上线后实测，不能保证所有运营商均稳定访问。
+
+## 手机图片优化
+
+首页与作品页在899px及以下屏幕宽度时通过picture/source加载640px宽的WebP版本（quality 68），桌面端继续使用原图；作品大图查看保留原始图片。资源位于dist/assets/mobile/，清单与体积统计在manifest.json。更新图片后运行python3 scripts/build-mobile-images.py，再运行python3 scripts/sync-preview.py。
