@@ -91,3 +91,9 @@ These six stock photographs illustrate design concepts; they do not represent th
 ## 新增商业海报与效果图
 
 新增商业海报素材：`poster-work-08.webp` 至 `poster-work-10.webp`；新增效果图素材：`render-16.webp`、`render-18.webp` 至 `render-20.webp`。素材由网站所有者提供，保留原始分辨率与比例并压缩为WebP；原有43个案例及其文案保持不变。
+
+## 首页分类生成封面
+
+首页六个设计分类使用 `assets/category-covers/*-ai.webp`，由内置 image_gen 工具生成，作为主题创意配图，不属于作品案例。工具不公开实际模型版本，无法确认用户指定的 img2.6。提示词及生成方式记录在 `dist/assets/category-covers/prompts.json`。作品案例仍保留网站所有者提供的50个项目，不受此次替换影响。
+
+专业技能区域对应七个作品分类，复用生成主题封面并新增 `assets/category-covers/illustration-ai.webp`，由内置 image_gen 生成；提示词记录在分类封面目录的 prompts.json。

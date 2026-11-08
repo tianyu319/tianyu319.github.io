@@ -577,43 +577,35 @@ textarea.m-field { min-height: 112px; resize: vertical; }
 @layer scenes {
 @media (prefers-reduced-motion: no-preference) {
   [data-8b-live] #capabilities .service { position: sticky; top: calc(clamp(80px, 12svh, 108px) + var(--i) * 14px); transform-origin: 50% 0; }
+  @media (max-width: 899px) { [data-8b-live] #capabilities .service { top: calc(80px + var(--i) * 8px); } }
 }
-}
-@layer scenes {
-[data-8b-live] #capabilities .capabilities__deck > .service { --i: calc(0 + var(--i) * 1); }
-[data-8b-live] #capabilities { timeline-scope: --capabilities-t1, --capabilities-t2, --capabilities-t3, --capabilities-t4; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(-n+4) { animation-name: capabilities-li-service-scale; transform: none; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(-n+4), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(-n+4) > .service__shade { animation-timing-function: linear; animation-fill-mode: both; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) { view-timeline: --capabilities-t1 block; view-timeline-inset: 0; animation-timeline: --capabilities-t2; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) { view-timeline: --capabilities-t2 block; view-timeline-inset: 0; animation-timeline: --capabilities-t3; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) { view-timeline: --capabilities-t3 block; view-timeline-inset: 0; animation-timeline: --capabilities-t4; }
+[data-8b-live] #capabilities { timeline-scope: --capabilities-t1, --capabilities-t2, --capabilities-t3, --capabilities-t4, --capabilities-t5, --capabilities-t6; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) { view-timeline: --capabilities-t1 block; view-timeline-inset: 0; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1) { animation-name: capabilities-li-service-scale; transform: none; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1) > .service__shade { animation-name: capabilities-span-service-shade-opacity; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1) > .service__shade { animation-timeline: --capabilities-t1; animation-range: cover 0% cover calc(100vh - 110px); animation-timing-function: linear; animation-fill-mode: both; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) { view-timeline: --capabilities-t2 block; view-timeline-inset: 0; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) { animation-name: capabilities-li-service-scale; transform: none; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) > .service__shade { animation-name: capabilities-span-service-shade-opacity; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) > .service__shade { animation-timeline: --capabilities-t2; animation-range: cover 0% cover calc(100vh - 124px); animation-timing-function: linear; animation-fill-mode: both; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) { view-timeline: --capabilities-t3 block; view-timeline-inset: 0; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) { animation-name: capabilities-li-service-scale; transform: none; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) > .service__shade { animation-name: capabilities-span-service-shade-opacity; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) > .service__shade { animation-timeline: --capabilities-t3; animation-range: cover 0% cover calc(100vh - 138px); animation-timing-function: linear; animation-fill-mode: both; }
 [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(5) { view-timeline: --capabilities-t4 block; view-timeline-inset: 0; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1) { animation-timeline: --capabilities-t1; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(-n+4) > .service__shade { animation-name: capabilities-span-service-shade-opacity; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1) > .service__shade { animation-timeline: --capabilities-t1; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) > .service__shade { animation-timeline: --capabilities-t2; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) > .service__shade { animation-timeline: --capabilities-t3; }
-[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) > .service__shade { animation-timeline: --capabilities-t4; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) { animation-name: capabilities-li-service-scale; transform: none; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) > .service__shade { animation-name: capabilities-span-service-shade-opacity; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) > .service__shade { animation-timeline: --capabilities-t4; animation-range: cover 0% cover calc(100vh - 152px); animation-timing-function: linear; animation-fill-mode: both; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(6) { view-timeline: --capabilities-t5 block; view-timeline-inset: 0; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(5) { animation-name: capabilities-li-service-scale; transform: none; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(5) > .service__shade { animation-name: capabilities-span-service-shade-opacity; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(5), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(5) > .service__shade { animation-timeline: --capabilities-t5; animation-range: cover 0% cover calc(100vh - 166px); animation-timing-function: linear; animation-fill-mode: both; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(7) { view-timeline: --capabilities-t6 block; view-timeline-inset: 0; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(6) { animation-name: capabilities-li-service-scale; transform: none; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(6) > .service__shade { animation-name: capabilities-span-service-shade-opacity; }
+[data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(6), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(6) > .service__shade { animation-timeline: --capabilities-t6; animation-range: cover 0% cover calc(100vh - 180px); animation-timing-function: linear; animation-fill-mode: both; }
 @keyframes capabilities-li-service-scale { 0% { scale: 1; } 100% { scale: 0.9; } }
 @keyframes capabilities-span-service-shade-opacity { 0% { opacity: 0; } 100% { opacity: 0.55; } }
-@media (min-width: 900px) {
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) { animation-range: cover 0% cover calc(100vh - 124px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) { animation-range: cover 0% cover calc(100vh - 138px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) { animation-range: cover 0% cover calc(100vh - 152px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1) > .service__shade { animation-range: cover 0% cover calc(100vh - 110px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) > .service__shade { animation-range: cover 0% cover calc(100vh - 124px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) > .service__shade { animation-range: cover 0% cover calc(100vh - 138px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) > .service__shade { animation-range: cover 0% cover calc(100vh - 152px); }
-}
-@media (max-width: 899px) {
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) { animation-range: cover 0% cover calc(100vh - 125.4px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) { animation-range: cover 0% cover calc(100vh - 139.4px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) { animation-range: cover 0% cover calc(100vh - 153.4px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1), [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(1) > .service__shade { animation-range: cover 0% cover calc(100vh - 111.4px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(2) > .service__shade { animation-range: cover 0% cover calc(100vh - 125.4px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(3) > .service__shade { animation-range: cover 0% cover calc(100vh - 139.4px); }
-  [data-8b-live] #capabilities .capabilities__deck > li:nth-of-type(4) > .service__shade { animation-range: cover 0% cover calc(100vh - 153.4px); }
-}
 }
 </style>
 <style data-8b-part="scene:method">
@@ -714,11 +706,11 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 #navigation .menu__list a {letter-spacing:0;line-height:1.2;}
 </style>
 <style>
-#capabilities .service__entry {position:absolute;inset:0;z-index:3;border-radius:inherit;color:var(--color-1);text-decoration:none;}
-#capabilities .service__entry>span {position:absolute;right:clamp(24px,3vw,46px);bottom:clamp(24px,3vw,46px);display:flex;gap:28px;align-items:center;background:var(--color-3);padding:15px 22px;border-radius:999px;font-size:17px;font-weight:600;transition:background .25s,transform .3s;}
+#capabilities .service__entry {position:absolute;right:clamp(24px,3vw,46px);bottom:clamp(24px,3vw,46px);z-index:3;border-radius:999px;color:var(--color-1);text-decoration:none;}
+#capabilities .service__entry>span {display:flex;gap:28px;align-items:center;background:var(--color-3);padding:15px 22px;border-radius:999px;font-size:17px;font-weight:600;transition:background .25s,transform .3s;}
 #capabilities .service__entry:hover>span {background:#fff;transform:translateY(-5px);}
 #capabilities .service__entry:focus-visible {outline:4px solid var(--color-3);outline-offset:-5px;}
-@media(max-width:899px){#capabilities .service__entry>span {bottom:30px;right:30px;font-size:15px;padding:12px 18px;}}
+@media(max-width:899px){#capabilities .service__entry {bottom:30px;right:30px;}#capabilities .service__entry>span {font-size:15px;padding:12px 18px;}}
 @media(prefers-reduced-motion:reduce){#capabilities .service__entry>span{transition:none;}}
 </style><style data-8b-part="mobile-hero-spacing">
 /* Reserve separate rows for the mobile portrait and greeting. */
@@ -794,19 +786,21 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 #work .work__lead { width: 100%; max-width: none; font-size: clamp(18px, 1.65vw, 28px); line-height: 1.65; }
 #work .category-preview { display: grid; place-items: center; background: #20252b; }
 #work .category-preview > img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; }
-#work .category-preview--series { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5%; padding: 12% 9% 23%; align-items: center; }
-#work .category-preview--series > img { height: auto; max-height: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 18px 36px #0005; }
-#work .category-preview--series > img:first-child { transform: rotate(-7deg) translateY(7%); }
-#work .category-preview--series > img:last-child { transform: rotate(7deg) translateY(7%); }
-#work .category-preview--poster { background: radial-gradient(ellipse at 50% 35%, #425669, #1b2733); }
-#work .category-preview--commerce { background: radial-gradient(ellipse at 50% 35%, #5f748c, #1b2b3e); }
-#work .category-preview--packaging { background: radial-gradient(ellipse at 50% 35%, #b6aa9b, #5d665c); }
-#work .category-preview--brand > img { object-position: 50% 36%; }
-#work .category-preview--local > img { object-position: 50% 45%; }
-#work .category-preview--render > img { object-position: 50% 40%; }
+#work .category-preview--brand > img { object-position: 50% 45%; }
+#work .category-preview--local > img { object-position: 55% 45%; }
+#work .category-preview--render > img { object-position: 50% 45%; }
 @media (max-width: 899px) {
   #work .work__head { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   #work .work__lead { font-size: 16px; line-height: 1.6; }
+}
+</style>
+<style data-8b-part="capabilities-seven-layout">
+#capabilities .capabilities__head { display: grid; grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr); align-items: start; gap: clamp(28px, 4vw, 72px); }
+#capabilities .capabilities__lead { max-width: none; width: 100%; font-size: clamp(18px, 1.65vw, 28px); line-height: 1.65; }
+#capabilities .service__media img { display: block; }
+@media (max-width: 899px) {
+ #capabilities .capabilities__head { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+ #capabilities .capabilities__lead { font-size: 16px; line-height: 1.6; }
 }
 </style>
 </head>
@@ -876,32 +870,32 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 <div class="work__window">
 <ul class="work__track" data-8b-fixed="6" data-8b-items=":scope &gt; .case">
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--poster category-preview--series"><img src="assets/cases/poster-work-04.webp" alt="节约用水公益海报" width="600" height="848" loading="lazy" decoding="async"/><img src="assets/cases/poster-work-03.webp" alt="MIX网球 中秋活动" width="600" height="1200" loading="lazy" decoding="async"/><img src="assets/cases/poster-work-05.webp" alt="跨境电商海报" width="600" height="789" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--poster"><img src="assets/category-covers/poster-ai.webp" alt="商业海报主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
 <span class="m-badge case__tag">商业海报</span>
 <div class="case__text"><h3 class="m-text-4 case__name">商业海报</h3><p class="m-text-5 case__line">通过清晰的排版与主视觉，突出宣传主题和信息重点。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--commerce category-preview--series"><img src="assets/cases/commerce-work-01.webp" alt="TORRAS 充电宝" width="887" height="1774" loading="lazy" decoding="async"/><img src="assets/cases/commerce-work-02.webp" alt="ALOBON 口红" width="887" height="1774" loading="lazy" decoding="async"/><img src="assets/cases/commerce-work-04.webp" alt="钢化膜" width="793" height="1983" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--commerce"><img src="assets/category-covers/commerce-ai.webp" alt="电商视觉主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
 <span class="m-badge case__tag">电商视觉</span>
 <div class="case__text"><h3 class="m-text-4 case__name">电商视觉</h3><p class="m-text-5 case__line">突出商品特点与核心卖点，让用户快速获取关键信息。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--brand"><img src="assets/cases/brand-work-02.webp" alt="无锡春潮幼儿园 画册" width="800" height="600" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--brand"><img src="assets/category-covers/brand-ai.webp" alt="品牌视觉主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
 <span class="m-badge case__tag">品牌视觉</span>
 <div class="case__text"><h3 class="m-text-4 case__name">品牌视觉</h3><p class="m-text-5 case__line">统一色彩、字体与图形语言，建立清晰一致的品牌风格。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--local"><img src="assets/cases/local-work-02.webp" alt="老码头火锅 美团头图" width="800" height="400" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--local"><img src="assets/category-covers/local-ai.webp" alt="本地生活主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
 <span class="m-badge case__tag">本地生活</span>
 <div class="case__text"><h3 class="m-text-4 case__name">本地生活</h3><p class="m-text-5 case__line">围绕门店、服务与活动，呈现清晰的本地生活宣传内容。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--packaging category-preview--series"><img src="assets/cases/packaging-work-01.webp" alt="茶叶手提袋" width="600" height="800" loading="lazy" decoding="async"/><img src="assets/cases/packaging-work-02.webp" alt="柠檬叶精油" width="600" height="800" loading="lazy" decoding="async"/><img src="assets/cases/packaging-work-06.webp" alt="百梦唐枕头盒" width="600" height="800" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--packaging"><img src="assets/category-covers/packaging-ai.webp" alt="包装设计主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
 <span class="m-badge case__tag">包装设计</span>
 <div class="case__text"><h3 class="m-text-4 case__name">包装设计</h3><p class="m-text-5 case__line">结合品牌风格与产品特点，呈现包装结构、版式与应用效果。</p></div>
 </li>
 <li class="case">
-<div class="case__media"><div class="case__img category-preview category-preview--render"><img src="assets/cases/render-18.webp" alt="氢能源补能站" width="1614" height="974" loading="lazy" decoding="async"/></div></div>
+<div class="case__media"><div class="case__img category-preview category-preview--generated category-preview--render"><img src="assets/category-covers/render-ai.webp" alt="效果图主题创意封面" width="1536" height="1024" loading="lazy" decoding="async"/></div></div>
 <span class="m-badge case__tag">效果图</span>
 <div class="case__text"><h3 class="m-text-4 case__name">效果图</h3><p class="m-text-5 case__line">通过场景、材质与光影，直观展示设计方案的视觉效果。</p></div>
 </li></ul>
@@ -945,57 +939,82 @@ p {line-height:1.65;} .statement__lead {word-break:normal;}
 </div>
 </div>
 </section>
-<!-- capabilities: services: five cards that stack as you scroll, each with deliverable badges and a photo (animation: scene:capabilities) -->
+<!-- capabilities: services: seven cards that stack as you scroll, each with deliverable badges and a photo (animation: scene:capabilities) -->
 <section aria-labelledby="capabilities-title" data-8b-section="capabilities" id="capabilities">
 <div class="capabilities__head">
 <h2 class="m-text-3" data-8b-motion="rise" id="capabilities-title">专业技能<span aria-hidden="true" class="m-dot"></span></h2>
-<p class="m-text-5 capabilities__lead">熟练使用设计工具，掌握专业设计知识，能够独立完成素材处理、方案设计和成品交付。</p>
+<p class="m-text-5 capabilities__lead">熟练使用设计工具，掌握图像处理、版式编排与视觉表达，能够结合品牌定位和使用场景，独立完成素材处理、方案设计与成品交付，让不同类型的设计保持清晰、统一。</p>
 </div>
-<ol class="capabilities__deck" data-8b-fixed="5" data-8b-items=":scope &gt; .service">
-<li class="service m-surface">
+<ol class="capabilities__deck" data-8b-fixed="7" data-8b-items=":scope &gt; .service">
+<li class="service m-surface" data-service-category="poster">
 <div class="service__text">
-<h3 class="m-text-4">平面与视觉设计</h3>
-<p class="m-text-5 service__line">精通核心设计软件，完成海报、电商图与社交媒体视觉设计。</p>
-<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">Photoshop</li><li class="m-badge">Illustrator</li><li class="m-badge">商业海报</li><li class="m-badge">电商视觉</li></ul>
+<h3 class="m-text-4">商业海报</h3>
+<p class="m-text-5 service__line">围绕宣传主题构建主视觉，结合图像处理、字体编排与信息层级，让海报兼顾视觉吸引力和内容可读性。</p>
+<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">Photoshop</li><li class="m-badge">Illustrator</li><li class="m-badge">主视觉</li><li class="m-badge">信息层级</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="模板氛围示意图片，非个人作品" height="900" loading="lazy" src="assets/studio-11.jpg" width="1200"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="商业海报主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/poster-ai.webp"/></div>
 <span aria-hidden="true" class="service__shade"></span>
-<a aria-label="查看平面与视觉设计作品案例" class="service__entry" href="works.html"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a></li>
-<li class="service m-surface">
-<div class="service__text">
-<h3 class="m-text-4">图像与排版</h3>
-<p class="m-text-5 service__line">系统掌握图形图像处理与色彩构成，以清晰的版式组织信息。</p>
-<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">CorelDRAW</li><li class="m-badge">图形处理</li><li class="m-badge">色彩构成</li><li class="m-badge">版式设计</li></ul>
-</div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="模板氛围示意图片，非个人作品" height="900" loading="lazy" src="assets/studio-12.jpg" width="1200"/></div>
-<span aria-hidden="true" class="service__shade"></span>
+<a aria-label="查看商业海报作品案例" class="service__entry" href="works.html?category=poster#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
-<li class="service m-surface">
+<li class="service m-surface" data-service-category="commerce">
 <div class="service__text">
-<h3 class="m-text-4">摄影与影像</h3>
-<p class="m-text-5 service__line">掌握摄影基础知识，能够使用图像和视频工具处理视觉素材。</p>
-<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">Final Cut Pro</li><li class="m-badge">摄影基础</li><li class="m-badge">影像处理</li><li class="m-badge">视觉表达</li></ul>
+<h3 class="m-text-4">电商视觉</h3>
+<p class="m-text-5 service__line">结合商品特点与使用场景，完成产品精修、卖点提炼和页面编排，呈现清晰统一的商品展示视觉。</p>
+<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">产品精修</li><li class="m-badge">卖点表达</li><li class="m-badge">电商长图</li><li class="m-badge">场景合成</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="模板氛围示意图片，非个人作品" height="900" loading="lazy" src="assets/studio-13.jpg" width="1200"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="电商视觉主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/commerce-ai.webp"/></div>
 <span aria-hidden="true" class="service__shade"></span>
+<a aria-label="查看电商视觉作品案例" class="service__entry" href="works.html?category=commerce#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
-<li class="service m-surface">
+<li class="service m-surface" data-service-category="brand">
 <div class="service__text">
-<h3 class="m-text-4">办公与沟通</h3>
-<p class="m-text-5 service__line">熟悉多种操作系统和办公工具，能够快速把握需求，高效沟通与协作。</p>
-<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">Keynote</li><li class="m-badge">Microsoft Office</li><li class="m-badge">方案沟通</li><li class="m-badge">英语 · 雅思5.0</li></ul>
+<h3 class="m-text-4">品牌视觉</h3>
+<p class="m-text-5 service__line">从品牌定位出发，统筹标志、色彩、字体与图形语言，将品牌风格延展到画册和日常传播物料。</p>
+<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">品牌VI</li><li class="m-badge">标志应用</li><li class="m-badge">画册排版</li><li class="m-badge">视觉规范</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="模板氛围示意图片，非个人作品" height="900" loading="lazy" src="assets/studio-14.jpg" width="1200"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="品牌视觉主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/brand-ai.webp"/></div>
 <span aria-hidden="true" class="service__shade"></span>
+<a aria-label="查看品牌视觉作品案例" class="service__entry" href="works.html?category=brand#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
-<li class="service m-surface">
+<li class="service m-surface" data-service-category="local">
 <div class="service__text">
-<h3 class="m-text-4">AI辅助设计</h3>
-<p class="m-text-5 service__line">使用AI设计工具辅助生成素材、优化方案，提高设计效率。</p>
-<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">素材生成</li><li class="m-badge">方案迭代</li><li class="m-badge">AI设计工具</li><li class="m-badge">设计执行</li></ul>
+<h3 class="m-text-4">本地生活</h3>
+<p class="m-text-5 service__line">围绕门店、餐饮和活动推广，适配抖音、美团等平台的展示场景，让服务信息与品牌特色更清楚。</p>
+<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">门店推广</li><li class="m-badge">餐饮视觉</li><li class="m-badge">平台头图</li><li class="m-badge">活动传播</li></ul>
 </div>
-<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="模板氛围示意图片，非个人作品" height="900" loading="lazy" src="assets/studio-15.jpg" width="1200"/></div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="本地生活主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/local-ai.webp"/></div>
 <span aria-hidden="true" class="service__shade"></span>
+<a aria-label="查看本地生活作品案例" class="service__entry" href="works.html?category=local#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
+</li>
+<li class="service m-surface" data-service-category="packaging">
+<div class="service__text">
+<h3 class="m-text-4">包装设计</h3>
+<p class="m-text-5 service__line">结合产品特性与品牌调性，梳理包装版式、结构和材质表现，兼顾货架识别与系列视觉的一致性。</p>
+<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">包装版式</li><li class="m-badge">结构呈现</li><li class="m-badge">材质工艺</li><li class="m-badge">系列延展</li></ul>
+</div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="包装设计主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/packaging-ai.webp"/></div>
+<span aria-hidden="true" class="service__shade"></span>
+<a aria-label="查看包装设计作品案例" class="service__entry" href="works.html?category=packaging#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
+</li>
+<li class="service m-surface" data-service-category="illustration">
+<div class="service__text">
+<h3 class="m-text-4">文创/插画</h3>
+<p class="m-text-5 service__line">通过角色造型、动作表情与色彩搭配建立鲜明主题，将插画语言延展到贴纸、表情包和文创载体。</p>
+<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">角色设计</li><li class="m-badge">主题插画</li><li class="m-badge">表情包</li><li class="m-badge">文创延展</li></ul>
+</div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="文创/插画主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/illustration-ai.webp"/></div>
+<span aria-hidden="true" class="service__shade"></span>
+<a aria-label="查看文创/插画作品案例" class="service__entry" href="works.html?category=illustration#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
+</li>
+<li class="service m-surface" data-service-category="social">
+<div class="service__text">
+<h3 class="m-text-4">效果图</h3>
+<p class="m-text-5 service__line">运用场景搭建、材质表现与光影组织，呈现建筑、空间、门头和产品外观，让设计方案更直观。</p>
+<ul class="service__tags" data-8b-items=":scope &gt; li"><li class="m-badge">空间表现</li><li class="m-badge">门头场景</li><li class="m-badge">材质光影</li><li class="m-badge">产品视图</li></ul>
+</div>
+<div class="service__media" data-8b-enter="86%" data-8b-motion="iris"><img alt="效果图主题创意配图" width="1536" height="1024" loading="lazy" decoding="async" src="assets/category-covers/render-ai.webp"/></div>
+<span aria-hidden="true" class="service__shade"></span>
+<a aria-label="查看效果图作品案例" class="service__entry" href="works.html?category=social#collection"><span>查看作品案例 <span aria-hidden="true">↗</span></span></a>
 </li>
 </ol>
 </section>
