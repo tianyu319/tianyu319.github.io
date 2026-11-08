@@ -99,3 +99,7 @@ These six stock photographs illustrate design concepts; they do not represent th
 首页六个设计分类使用 `assets/category-covers/*-ai.webp`，由内置 image_gen 工具生成，作为主题创意配图，不属于作品案例。工具不公开实际模型版本，无法确认用户指定的 img2.6。提示词及生成方式记录在 `dist/assets/category-covers/prompts.json`。作品案例仍保留网站所有者提供的50个项目，不受此次替换影响。
 
 专业技能区域对应七个作品分类，复用生成主题封面并新增 `assets/category-covers/illustration-ai.webp`，由内置 image_gen 生成；提示词记录在分类封面目录的 prompts.json。
+
+## 音乐播放器
+
+本地集成 DIYgod/APlayer v1.10.1（https://github.com/DIYgod/APlayer），MIT License。分发文件位于 assets/vendor/aplayer/，保留原始 LICENSE。悬浮窗口、音乐管理页与自动歌单生成逻辑为本站适配。
