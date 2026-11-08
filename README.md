@@ -27,7 +27,10 @@
 
 首页与作品页在899px及以下屏幕宽度时通过picture/source加载640px宽的WebP版本（quality 68），桌面端继续使用原图；作品大图查看保留原始图片。资源位于dist/assets/mobile/，清单与体积统计在manifest.json。更新图片后运行python3 scripts/build-mobile-images.py，再运行python3 scripts/sync-preview.py。
 
-## 音乐播放与上传
+## 音乐播放与管理
 
-播放器使用本地分发的 APlayer v1.10.1。悬浮窗在首页、作品页和音乐管理页显示，默认不自动播放、不预下载音频；支持暂停、歌单、进度和音量。管理入口为music.html。上传歌曲到dist/assets/music/并提交，Pages工作流会运行scripts/build-music-library.py生成公共歌单。仅选择本机文件为试听，不会上传；大部分浏览器需要用户点击后才播放。页面跳转会暂停音乐，返回后保留公共歌单的曲目与进度。
-本地双击预览前，运行python3 scripts/build-music-library.py同步内嵌歌单。歌曲音频不内置示例，等待网站所有者上传。
+网站只提供右下角的播放、暂停与歌单控制，与顶部按钮右边缘对齐。打开页面时尝试有声自动播放；浏览器拦截时，在首次页面交互或点击播放按钮后开始。原music.html管理入口已关闭并返回首页；没有公开文件选择、试听或上传入口。
+
+仅通过GitHub仓库管理歌曲：上传音频到dist/assets/music/并提交，Pages工作流运行scripts/build-music-library.py生成歌单。需要仓库编辑权限。删除对应音频并提交即可移除歌曲。
+
+本地预览前运行python3 scripts/build-music-library.py同步内嵌歌单。HTTP/HTTPS 下的站内页面切换在独立内容层中完成，顶层播放器和音频元素持续保留，切页不重建播放器。支持分类深链接、返回首页锚点及浏览器前进后退。直接双击HTML时使用普通页面导航。
