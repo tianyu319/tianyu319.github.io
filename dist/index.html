@@ -721,7 +721,7 @@ picture.mobile-responsive { display: block; width: 100%; height: 100%; }
 @media (max-width: 899px) {
  #hero { min-height: 560px; padding-bottom: max(84px, 11svh); }
  #hero .hero__portrait { inset: 0; height: 100%; }
- #hero .hero__portrait img { object-fit: contain; object-position: 50% 65%; }
+ #hero .hero__portrait img { object-fit: cover; object-position: 50% 50%; }
  #hero .hero__signature { font-size: 23vw; }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -763,7 +763,7 @@ picture.mobile-responsive { display: block; width: 100%; height: 100%; }
 <!-- hero: cinematic portrait and oversized personal wordmark -->
 <section aria-labelledby="hero-title" data-8b-section="hero" id="hero">
 <picture class="hero__portrait">
-<source media="(max-width: 899px)" srcset="assets/tianyu-cinematic-mobile.webp"/>
+<source media="(max-width: 899px)" srcset="assets/tianyu-cinematic-mobile-v2.webp"/>
 <img alt="张天宇，黑色背景中的橙色光影肖像" src="assets/tianyu-cinematic.webp" width="1920" height="1097" fetchpriority="high" decoding="async"/>
 </picture>
 <h1 class="hero__signature" id="hero-title"><span>TianYu</span><sup>®</sup></h1>
