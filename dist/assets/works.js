@@ -11,8 +11,9 @@
   const visibleProjects = () => {
     if (activeFilter !== 'all') return projects.filter(p => p.category === activeFilter);
     // Interleave the categories deterministically, keeping detail navigation in the same order.
-    const groups = Object.keys(categories).map(category => projects.filter(p => p.category === category));
-    const mixed = [];
+    const recent = projects.filter(p => p.addedAt);
+    const groups = Object.keys(categories).map(category => projects.filter(p => p.category === category && !p.addedAt));
+    const mixed = [...recent];
     for (let i = 0; i < Math.max(0, ...groups.map(group => group.length)); i++) {
       groups.forEach(group => { if (group[i]) mixed.push(group[i]); });
     }
@@ -156,7 +157,7 @@
     ? Promise.resolve().then(() => JSON.parse(embeddedCatalogue.textContent))
     : fetch('assets/projects.json', {cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('catalogue');return r.json();});
   Promise.all([catalogue]).then(([data])=>{
-    projects=data;readURL();updateProgress();addEventListener('popstate',readURL);addEventListener('hashchange',readURL);
+    projects=data.sort((a,b) => (b.addedAt || '').localeCompare(a.addedAt || ''));readURL();updateProgress();addEventListener('popstate',readURL);addEventListener('hashchange',readURL);
   }).catch(()=>{
     count.textContent='案例列表暂时无法加载';const message=document.createElement('p');message.textContent='请刷新页面重试，或通过邮箱联系我：cheonu319@qq.com。';grid.replaceChildren(message);
   });
