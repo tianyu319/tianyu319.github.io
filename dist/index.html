@@ -712,16 +712,16 @@ picture.mobile-responsive { display: block; width: 100%; height: 100%; }
 #hero .hero__portrait { position: absolute; inset: 0; z-index: -2; display: block; }
 #hero .hero__portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%; }
 #hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.2), transparent 24%, transparent 68%, rgba(0,0,0,.25)); }
-#hero .hero__signature { display: flex; align-items: flex-start; justify-content: center; margin: 0; font-family: "TianYu Montserrat", Arial, sans-serif; font-size: clamp(100px, 23.5vw, 410px); font-weight: 500; line-height: .8; letter-spacing: -.065em; white-space: nowrap; }
+#hero .hero__signature { display: flex; align-items: flex-start; justify-content: center; margin: 0; font-family: "TianYu Montserrat", Arial, sans-serif; font-size: clamp(100px, 22vw, 385px); font-weight: 500; line-height: .8; letter-spacing: -.065em; white-space: nowrap; }
 #hero .hero__signature sup { position: static; margin: .015em 0 0 .16em; font-size: .34em; font-weight: 500; line-height: 1; letter-spacing: -.04em; }
 @media (min-width: 900px) {
  #hero .hero__portrait { inset: 0; }
  #hero .hero__portrait img { object-fit: contain; object-position: 50% 0; }
 }
 @media (max-width: 899px) {
- #hero { min-height: 560px; padding-bottom: max(52px, 7svh); }
- #hero .hero__portrait { inset: 10% 0 auto; height: 80%; -webkit-mask-image: linear-gradient(#000 0%, #000 82%, transparent 100%); mask-image: linear-gradient(#000 0%, #000 82%, transparent 100%); }
- #hero .hero__portrait img { object-position: 53% 45%; }
+ #hero { min-height: 560px; padding-bottom: max(84px, 11svh); }
+ #hero .hero__portrait { inset: 0; height: 100%; }
+ #hero .hero__portrait img { object-fit: contain; object-position: 50% 65%; }
  #hero .hero__signature { font-size: 23vw; }
 }
 @media (prefers-reduced-motion: no-preference) {
