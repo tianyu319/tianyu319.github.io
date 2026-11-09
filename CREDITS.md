@@ -103,3 +103,7 @@ These six stock photographs illustrate design concepts; they do not represent th
 ## 音乐播放器
 
 本地集成 DIYgod/APlayer v1.10.1（https://github.com/DIYgod/APlayer），MIT License。分发文件位于 assets/vendor/aplayer/，保留原始 LICENSE。悬浮窗口、音乐管理页与自动歌单生成逻辑为本站适配。
+
+## 首页星光与流星（本地预览）
+
+流星光点及渐变拖尾参考 Magic UI 的 Meteors 组件（MIT）：https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/meteors.tsx 。本地以无依赖 JavaScript/CSS 适配，不引入 React。随机调度、全宽星光、呼吸闪烁与人像保护遮罩为本站定制。MIT 许可保留于 dist/assets/vendor/magicui/LICENSE。
