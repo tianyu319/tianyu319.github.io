@@ -88,7 +88,7 @@
       picture.append(image);media.append(picture,arrow);
       const meta=document.createElement('div');meta.className='project-card__meta';
       const heading=document.createElement('h2');heading.textContent=p.title;
-      const badge=document.createElement('span');badge.textContent=placeholder?'展示示意':'作品展示';meta.append(heading,badge);
+      meta.append(heading);
       const caption=document.createElement('p');caption.className='project-card__caption';caption.textContent=p.focus;
       button.append(media,meta,caption);button.addEventListener('click',()=>{trigger=button;openProject(p.id);});card.append(button);fragment.append(card);
     });
@@ -116,7 +116,7 @@
     document.getElementById('detail-description').textContent=p.description;
     document.getElementById('detail-focus').textContent=p.focus;
     const placeholder=p.placeholder !== false;
-    document.getElementById('detail-notice').textContent=placeholder?'展示示意 · 非个人作品':categories[p.category]+' · 作品展示';
+    document.getElementById('detail-notice').textContent=placeholder?'展示示意 · 非个人作品':categories[p.category];
     document.getElementById('viewer-label').textContent=placeholder?'图片预览 · 模板示意':'图片预览 · '+p.title;
     const mobileSource=document.getElementById('detail-mobile-source');mobileSource.srcset=p.mobileImage || p.image;
     const image=document.getElementById('detail-image');image.src=p.image;image.alt=p.title+(placeholder?'，模板示意，非个人作品':'');
