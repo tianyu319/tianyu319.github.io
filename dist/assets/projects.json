@@ -1,5 +1,33 @@
 [
   {
+    "id": "illustration-09",
+    "category": "illustration",
+    "title": "动物赛车系列插画",
+    "image": "assets/cases/illustration-work-09.webp",
+    "width": 600,
+    "height": 597,
+    "placeholder": false,
+    "focus": "动物车手 · 缤纷赛车 · 系列插画",
+    "description": "以六组动物车手与赛车组成活泼的系列插画，通过红、黄、蓝、紫、绿等鲜明配色区分角色。统一圆润的动物造型、粗描边与赛车结构，结合号码、星形装饰和速度线，呈现富有动感与童趣的赛车主题视觉。",
+    "sourceFilename": "codex-clipboard-284e1dcd-5f4c-48c1-b07f-95d26ce62a94.jpg",
+    "mobileImage": "assets/mobile/cases/illustration-work-09.webp",
+    "addedAt": "2026-11-14T08:25:41+00:00"
+  },
+  {
+    "id": "render-27",
+    "category": "social",
+    "title": "茉莉奶白花艺美陈效果图",
+    "image": "assets/cases/render-27.webp",
+    "width": 1086,
+    "height": 1448,
+    "placeholder": false,
+    "focus": "茶饮品牌 · 花艺装置 · 商场美陈",
+    "description": "围绕茉莉奶白茶饮品牌，在商场立柱周围组合粉白花艺、巨型粉色饮品杯与绿色服饰的可爱角色装置。利用环绕式花带、发光品牌标识和暖色空间照明，呈现品牌展示、打卡互动与门店环境相呼应的美陈场景。",
+    "sourceFilename": "codex-clipboard-99e3a8f6-e036-49f2-9f93-10b0c9c2e7bc.png",
+    "mobileImage": "assets/mobile/cases/render-27.webp",
+    "addedAt": "2026-11-14T08:25:41+00:00"
+  },
+  {
     "id": "poster-12",
     "category": "poster",
     "title": "北京国安×张稀哲签售会海报",
